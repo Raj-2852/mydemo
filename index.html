@@ -3,39 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Visit The USA | Official Travel Guide & Trip Inspiration</title>
-  <meta name="description" content="Explore limitless travel inspiration, iconic road trips, national parks, vibrant cities, and diverse cultural experiences across the United States of America. Plan your dream USA vacation today.">
+  <title>Araku Valley Heritage & Organic Products | Authentic Coffee, Spices & Handicrafts</title>
+  <meta name="description" content="Experience authentic Araku Valley organic coffee, pure forest honey, tribal spices, handmade wooden crafts, and wellness herbs directly from Eastern Ghats tribal artisans.">
 
-  <!-- Fonts & Icons -->
+  <!-- Modern Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&family=Cabinet+Grotesk:wght@700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cabinet+Grotesk:wght@700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
-      --usa-navy: #0b1a30;
-      --usa-deep-blue: #0f274a;
-      --usa-blue: #1d4ed8;
-      --usa-light-blue: #3b82f6;
-      --usa-accent-red: #e11d48;
-      --usa-crimson: #be123c;
-      --usa-gold: #f59e0b;
-      --usa-sand: #f8fafc;
-      --usa-dark: #090e17;
-      --usa-card-bg: rgba(255, 255, 255, 0.96);
-      --glass-panel: rgba(15, 39, 74, 0.75);
-      --border-subtle: rgba(255, 255, 255, 0.14);
-      --text-main: #0f172a;
+      /* Organic Araku Palette */
+      --araku-forest: #0c2014;
+      --araku-emerald: #14532d;
+      --araku-leaf: #16a34a;
+      --araku-coffee: #451a03;
+      --araku-roast: #78350f;
+      --araku-gold: #d97706;
+      --araku-amber: #f59e0b;
+      --araku-cream: #fbfbee;
+      --araku-card: #ffffff;
+      --araku-border: #e2e8f0;
+      
+      --text-dark: #0f172a;
       --text-muted: #64748b;
+      --text-light: #f8fafc;
+      
       --radius-sm: 8px;
-      --radius-md: 16px;
-      --radius-lg: 24px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
       --radius-pill: 9999px;
-      --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.06);
-      --shadow-md: 0 10px 30px rgba(0, 0, 0, 0.1);
-      --shadow-xl: 0 20px 45px rgba(11, 26, 48, 0.22);
-      --transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      
+      --shadow-soft: 0 4px 20px rgba(12, 32, 20, 0.06);
+      --shadow-hover: 0 16px 36px rgba(12, 32, 20, 0.14);
+      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -46,68 +48,59 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: #f8fafc;
-      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--araku-cream);
+      color: var(--text-dark);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
     /* ========================================================
-       TOP BANNER & NAVIGATION
+       TOP UTILITY STRIP
     ======================================================== */
-    .top-utility-bar {
-      background: var(--usa-dark);
-      color: #94a3b8;
-      font-size: 0.82rem;
-      padding: 0.45rem 2rem;
+    .utility-bar {
+      background: var(--araku-forest);
+      color: #cbd5e1;
+      font-size: 0.84rem;
+      padding: 0.5rem 2rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    .top-utility-bar a {
-      color: #cbd5e1;
+    .utility-bar a {
+      color: #86efac;
       text-decoration: none;
-      transition: var(--transition);
+      font-weight: 600;
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
+      margin-left: 1.5rem;
+      transition: var(--transition);
     }
 
-    .top-utility-bar a:hover {
+    .utility-bar a:hover {
       color: #ffffff;
     }
 
-    .utility-links {
-      display: flex;
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .contact-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      color: #38bdf8;
-      font-weight: 600;
-    }
-
+    /* ========================================================
+       STICKY HEADER & NAV
+    ======================================================== */
     header.main-header {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(11, 26, 48, 0.95);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--border-subtle);
-      transition: var(--transition);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
     }
 
     .navbar {
       max-width: 1360px;
       margin: 0 auto;
-      padding: 0.9rem 2rem;
+      padding: 0.85rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -116,84 +109,85 @@
     .brand-logo {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
+      gap: 0.85rem;
       text-decoration: none;
     }
 
-    .brand-stars {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-      background: linear-gradient(135deg, var(--usa-accent-red), #991b1b);
-      padding: 6px 10px;
+    .brand-emblem {
+      width: 44px;
+      height: 44px;
       border-radius: var(--radius-sm);
-      color: white;
-      font-size: 0.7rem;
-      box-shadow: 0 4px 10px rgba(225, 29, 72, 0.35);
+      background: linear-gradient(135deg, var(--araku-emerald), var(--araku-roast));
+      color: #fef08a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 12px rgba(20, 83, 45, 0.25);
     }
 
-    .brand-title {
+    .brand-names {
       display: flex;
       flex-direction: column;
-      line-height: 1;
+      line-height: 1.1;
     }
 
-    .brand-title .small-pre {
-      font-size: 0.75rem;
+    .brand-names .pre-title {
+      font-size: 0.72rem;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #94a3b8;
-      font-weight: 700;
+      font-weight: 800;
+      color: var(--araku-leaf);
     }
 
-    .brand-title .main-text {
-      font-family: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
-      font-size: 1.5rem;
+    .brand-names .main-title {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 1.45rem;
       font-weight: 900;
+      color: var(--araku-forest);
       letter-spacing: -0.5px;
-      color: #ffffff;
     }
 
-    .brand-title .main-text span {
-      color: var(--usa-accent-red);
+    .brand-names .main-title span {
+      color: var(--araku-roast);
     }
 
     .nav-menu {
       display: flex;
-      align-items: center;
       list-style: none;
       gap: 2rem;
+      align-items: center;
     }
 
-    .nav-item a {
-      color: #e2e8f0;
+    .nav-link {
+      color: #334155;
       text-decoration: none;
       font-weight: 600;
       font-size: 0.95rem;
-      padding: 0.5rem 0.2rem;
+      padding: 0.4rem 0.2rem;
       position: relative;
       transition: var(--transition);
     }
 
-    .nav-item a:hover,
-    .nav-item a.active {
-      color: #ffffff;
+    .nav-link:hover,
+    .nav-link.active {
+      color: var(--araku-emerald);
     }
 
-    .nav-item a::after {
+    .nav-link::after {
       content: '';
       position: absolute;
       bottom: -4px;
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--usa-accent-red);
-      transition: var(--transition);
+      background: var(--araku-leaf);
       border-radius: 2px;
+      transition: var(--transition);
     }
 
-    .nav-item a:hover::after,
-    .nav-item a.active::after {
+    .nav-link:hover::after,
+    .nav-link.active::after {
       width: 100%;
     }
 
@@ -219,48 +213,80 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--usa-accent-red), #e11d48);
-      color: #ffffff;
-      box-shadow: 0 4px 14px rgba(225, 29, 72, 0.4);
+      background: linear-gradient(135deg, var(--araku-emerald), #15803d);
+      color: white;
+      box-shadow: 0 4px 14px rgba(20, 83, 45, 0.3);
     }
 
     .btn-primary:hover {
-      background: linear-gradient(135deg, #f43f5e, var(--usa-crimson));
+      background: linear-gradient(135deg, #166534, #14532d);
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(225, 29, 72, 0.5);
+      box-shadow: 0 6px 20px rgba(20, 83, 45, 0.4);
     }
 
-    .btn-outline-white {
-      background: rgba(255, 255, 255, 0.1);
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-    }
-
-    .btn-outline-white:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    .mobile-menu-toggle {
-      display: none;
-      background: transparent;
-      border: none;
+    .btn-coffee {
+      background: linear-gradient(135deg, var(--araku-roast), var(--araku-coffee));
       color: white;
-      font-size: 1.5rem;
-      cursor: pointer;
+      box-shadow: 0 4px 14px rgba(69, 26, 3, 0.3);
+    }
+
+    .btn-coffee:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(69, 26, 3, 0.4);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid var(--araku-emerald);
+      color: var(--araku-emerald);
+    }
+
+    .btn-outline:hover {
+      background: var(--araku-emerald);
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .cart-btn {
+      background: #f1f5f9;
+      color: var(--araku-forest);
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-pill);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .cart-badge {
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      background: var(--araku-roast);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 800;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     /* ========================================================
-       HERO BANNER SECTION
+       HERO BANNER
     ======================================================== */
     .hero {
       position: relative;
       min-height: 85vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(180deg, rgba(11, 26, 48, 0.6) 0%, rgba(11, 26, 48, 0.85) 100%),
-        url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
-      color: #ffffff;
+      background: linear-gradient(180deg, rgba(12, 32, 20, 0.75) 0%, rgba(12, 32, 20, 0.9) 100%),
+                  url('images/Collage Backgrounds #17 (01).jpg') center/cover no-repeat;
+      color: white;
       padding: 4rem 2rem;
     }
 
@@ -270,14 +296,14 @@
       width: 100%;
     }
 
-    .hero-badge {
+    .hero-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      background: rgba(225, 29, 72, 0.2);
-      border: 1px solid rgba(225, 29, 72, 0.5);
-      color: #fecdd3;
-      padding: 0.4rem 1rem;
+      background: rgba(22, 163, 74, 0.25);
+      border: 1px solid rgba(134, 239, 172, 0.4);
+      color: #86efac;
+      padding: 0.4rem 1.1rem;
       border-radius: var(--radius-pill);
       font-size: 0.85rem;
       font-weight: 700;
@@ -288,132 +314,85 @@
     }
 
     .hero-title {
-      font-family: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
-      font-size: clamp(2.5rem, 5.5vw, 4.8rem);
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: clamp(2.5rem, 5vw, 4.6rem);
       font-weight: 900;
-      line-height: 1.08;
+      line-height: 1.1;
       max-width: 900px;
       margin-bottom: 1.25rem;
-      letter-spacing: -1.5px;
+      letter-spacing: -1.2px;
     }
 
-    .hero-title span.glow {
-      background: linear-gradient(135deg, #ffffff 30%, #38bdf8 100%);
+    .hero-title span {
+      background: linear-gradient(135deg, #fef08a 20%, #f59e0b 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .hero-description {
+    .hero-subtitle {
       font-size: 1.2rem;
-      color: #cbd5e1;
-      max-width: 650px;
+      color: #e2e8f0;
+      max-width: 680px;
       line-height: 1.7;
       margin-bottom: 2.25rem;
     }
 
-    .hero-quick-actions {
+    .hero-btns {
       display: flex;
       flex-wrap: wrap;
       gap: 1rem;
       margin-bottom: 3.5rem;
     }
 
-    /* Interactive Search & Plan Box */
-    .hero-search-bar {
-      background: rgba(255, 255, 255, 0.98);
-      border-radius: var(--radius-lg);
-      padding: 1.25rem 1.75rem;
-      box-shadow: var(--shadow-xl);
-      max-width: 1050px;
-      color: var(--text-main);
-      display: grid;
-      grid-template-columns: 2fr 1.5fr 1.5fr auto;
-      gap: 1.25rem;
-      align-items: center;
-    }
-
-    .search-field {
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-    }
-
-    .search-field label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.75px;
-      font-weight: 800;
-      color: #64748b;
-    }
-
-    .search-field select,
-    .search-field input {
-      border: none;
-      background: #f1f5f9;
-      font-family: inherit;
-      font-size: 0.95rem;
-      font-weight: 600;
-      color: #0f172a;
-      padding: 0.65rem 0.85rem;
-      border-radius: var(--radius-sm);
-      outline: none;
-      transition: var(--transition);
-    }
-
-    .search-field select:focus,
-    .search-field input:focus {
-      background: #e2e8f0;
-      box-shadow: 0 0 0 2px var(--usa-blue);
-    }
-
-    /* ========================================================
-       FEATURED HIGHLIGHTS / QUICK STATS
-    ======================================================== */
-    .stats-strip {
-      background: #ffffff;
-      border-bottom: 1px solid #e2e8f0;
-      padding: 2rem 0;
-    }
-
-    .stats-container {
-      max-width: 1360px;
-      margin: 0 auto;
-      padding: 0 2rem;
+    /* Fast Category Jump */
+    .hero-highlights {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 2rem;
+      gap: 1.5rem;
+      max-width: 1100px;
     }
 
-    .stat-card {
+    .hero-box {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(10px);
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
       display: flex;
       align-items: center;
-      gap: 1.25rem;
+      gap: 1rem;
+      transition: var(--transition);
+      text-decoration: none;
+      color: white;
     }
 
-    .stat-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: var(--radius-md);
-      background: #eff6ff;
-      color: var(--usa-blue);
+    .hero-box:hover {
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateY(-4px);
+      border-color: #fef08a;
+    }
+
+    .hero-box-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--araku-amber);
+      color: var(--araku-forest);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       flex-shrink: 0;
     }
 
-    .stat-info h4 {
-      font-size: 1.45rem;
+    .hero-box-text h4 {
+      font-size: 1rem;
       font-weight: 800;
-      color: var(--usa-navy);
-      line-height: 1.2;
     }
 
-    .stat-info p {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-      font-weight: 500;
+    .hero-box-text p {
+      font-size: 0.78rem;
+      color: #cbd5e1;
     }
 
     /* ========================================================
@@ -433,50 +412,51 @@
       justify-content: space-between;
       align-items: flex-end;
       margin-bottom: 3rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
     }
 
-    .section-badge {
+    .section-tag {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      color: var(--usa-accent-red);
+      color: var(--araku-leaf);
       font-size: 0.85rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.4rem;
     }
 
     .section-title {
-      font-family: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
+      font-family: 'Cabinet Grotesk', sans-serif;
       font-size: clamp(2rem, 3.5vw, 2.75rem);
       font-weight: 900;
-      color: var(--usa-navy);
+      color: var(--araku-forest);
       line-height: 1.15;
       letter-spacing: -0.5px;
     }
 
-    .section-subtitle {
+    .section-desc {
       color: var(--text-muted);
       font-size: 1.05rem;
-      max-width: 600px;
+      max-width: 620px;
       margin-top: 0.5rem;
     }
 
-    /* Filter Pills */
+    /* Filter Buttons */
     .filter-pills {
       display: flex;
       gap: 0.6rem;
       flex-wrap: wrap;
-      margin-bottom: 2.25rem;
     }
 
     .filter-btn {
       padding: 0.55rem 1.25rem;
       border-radius: var(--radius-pill);
-      background: #f1f5f9;
+      background: #ffffff;
       color: #475569;
-      border: 1px solid #e2e8f0;
+      border: 1px solid var(--araku-border);
       font-size: 0.88rem;
       font-weight: 600;
       cursor: pointer;
@@ -485,527 +465,369 @@
 
     .filter-btn:hover,
     .filter-btn.active {
-      background: var(--usa-navy);
+      background: var(--araku-emerald);
       color: #ffffff;
-      border-color: var(--usa-navy);
+      border-color: var(--araku-emerald);
     }
 
     /* ========================================================
-       POPULAR DESTINATIONS & CITIES GRID
+       PRODUCTS CATALOG GRID
     ======================================================== */
-    .destinations-grid {
+    .products-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
       gap: 2rem;
     }
 
-    .destination-card {
-      background: #ffffff;
+    .product-card {
+      background: var(--araku-card);
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-sm);
-      transition: var(--transition);
-      position: relative;
-      display: flex;
-      flex-direction: column;
+      box-shadow: var(--shadow-soft);
       border: 1px solid #edf2f7;
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
     }
 
-    .destination-card:hover {
+    .product-card:hover {
       transform: translateY(-8px);
-      box-shadow: var(--shadow-xl);
+      box-shadow: var(--shadow-hover);
+      border-color: #bbf7d0;
     }
 
-    .card-img-wrapper {
+    .card-thumb {
       position: relative;
-      height: 240px;
+      height: 250px;
       overflow: hidden;
+      background: #e2e8f0;
     }
 
-    .card-img-wrapper img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .destination-card:hover .card-img-wrapper img {
-      transform: scale(1.08);
-    }
-
-    .card-tag {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: rgba(11, 26, 48, 0.85);
-      backdrop-filter: blur(8px);
-      color: #ffffff;
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 0.3rem 0.8rem;
-      border-radius: var(--radius-pill);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .card-state {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      background: #ffffff;
-      color: var(--usa-navy);
-      font-size: 0.75rem;
-      font-weight: 800;
-      padding: 0.3rem 0.75rem;
-      border-radius: var(--radius-pill);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .card-body {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .card-body h3 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--usa-navy);
-      margin-bottom: 0.4rem;
-    }
-
-    .card-body p {
-      color: var(--text-muted);
-      font-size: 0.92rem;
-      line-height: 1.55;
-      margin-bottom: 1.25rem;
-      flex-grow: 1;
-    }
-
-    .card-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-top: 1rem;
-      border-top: 1px solid #f1f5f9;
-    }
-
-    .card-rating {
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
-      font-weight: 700;
-      color: var(--usa-gold);
-      font-size: 0.9rem;
-    }
-
-    .card-link {
-      color: var(--usa-blue);
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 0.88rem;
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      transition: var(--transition);
-    }
-
-    .card-link:hover {
-      color: var(--usa-accent-red);
-      gap: 0.55rem;
-    }
-
-    /* ========================================================
-       ICONIC ROAD TRIPS / ITINERARIES
-    ======================================================== */
-    .road-trips-section {
-      background: var(--usa-navy);
-      color: #ffffff;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .road-trips-section::before {
-      content: '';
-      position: absolute;
-      top: -30%;
-      right: -10%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(11, 26, 48, 0) 70%);
-      border-radius: 50%;
-      pointer-events: none;
-    }
-
-    .road-trips-section .section-title {
-      color: #ffffff;
-    }
-
-    .road-trips-section .section-subtitle {
-      color: #94a3b8;
-    }
-
-    .road-trips-slider {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-    }
-
-    .trip-card {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-    }
-
-    .trip-card:hover {
-      background: rgba(255, 255, 255, 0.09);
-      transform: translateY(-6px);
-      border-color: rgba(59, 130, 246, 0.4);
-    }
-
-    .trip-img {
-      height: 200px;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      margin-bottom: 1.25rem;
-    }
-
-    .trip-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .trip-meta {
-      display: flex;
-      gap: 1rem;
-      font-size: 0.8rem;
-      color: #38bdf8;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 0.5rem;
-    }
-
-    .trip-card h3 {
-      font-size: 1.35rem;
-      font-weight: 800;
-      margin-bottom: 0.6rem;
-      color: #ffffff;
-    }
-
-    .trip-card p {
-      color: #cbd5e1;
-      font-size: 0.9rem;
-      line-height: 1.6;
-      margin-bottom: 1.25rem;
-    }
-
-    .trip-stops {
-      display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      color: #94a3b8;
-      margin-top: auto;
-      padding-top: 1rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
-    }
-
-    /* ========================================================
-       EXPERIENCES CAROUSEL / GRID
-    ======================================================== */
-    .experiences-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-    }
-
-    .exp-item {
-      position: relative;
-      height: 380px;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      cursor: pointer;
-      box-shadow: var(--shadow-md);
-    }
-
-    .exp-item img {
+    .card-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       transition: transform 0.6s ease;
     }
 
-    .exp-overlay {
+    .product-card:hover .card-thumb img {
+      transform: scale(1.08);
+    }
+
+    .badge-pill {
       position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 40%, rgba(11, 26, 48, 0.95) 100%);
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 1.75rem;
-      color: #ffffff;
-      transition: var(--transition);
-    }
-
-    .exp-item:hover img {
-      transform: scale(1.1);
-    }
-
-    .exp-overlay h4 {
-      font-size: 1.35rem;
+      top: 1rem;
+      left: 1rem;
+      background: rgba(12, 32, 20, 0.85);
+      backdrop-filter: blur(8px);
+      color: #fef08a;
+      font-size: 0.72rem;
       font-weight: 800;
-      margin-bottom: 0.4rem;
-    }
-
-    .exp-overlay p {
-      font-size: 0.85rem;
-      color: #cbd5e1;
-      opacity: 0.9;
-    }
-
-    /* ========================================================
-       INSPIRATIONAL STORIES & TRAVEL BLOG
-    ======================================================== */
-    .stories-grid {
-      display: grid;
-      grid-template-columns: 1.3fr 1fr;
-      gap: 2rem;
-    }
-
-    .story-hero-card {
-      background: #ffffff;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-md);
-      display: flex;
-      flex-direction: column;
-      border: 1px solid #edf2f7;
-    }
-
-    .story-hero-img {
-      height: 320px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    .story-hero-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .story-hero-content {
-      padding: 2rem;
-    }
-
-    .story-meta {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      font-size: 0.85rem;
-      color: #64748b;
-      margin-bottom: 0.75rem;
-    }
-
-    .story-meta .category {
-      color: var(--usa-accent-red);
-      font-weight: 700;
+      padding: 0.35rem 0.8rem;
+      border-radius: var(--radius-pill);
       text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
-    .story-hero-content h3 {
-      font-size: 1.6rem;
+    .origin-pill {
+      position: absolute;
+      bottom: 1rem;
+      right: 1rem;
+      background: white;
+      color: var(--araku-forest);
+      font-size: 0.72rem;
       font-weight: 800;
-      color: var(--usa-navy);
-      margin-bottom: 0.75rem;
-      line-height: 1.25;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-pill);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
     }
 
-    .story-side-list {
+    .product-content {
+      padding: 1.5rem;
       display: flex;
       flex-direction: column;
-      gap: 1.25rem;
+      flex-grow: 1;
     }
 
-    .story-mini-card {
-      background: #ffffff;
-      border-radius: var(--radius-md);
-      padding: 1.25rem;
-      box-shadow: var(--shadow-sm);
-      display: flex;
-      gap: 1.25rem;
-      border: 1px solid #edf2f7;
-      transition: var(--transition);
-      cursor: pointer;
-    }
-
-    .story-mini-card:hover {
-      transform: translateX(6px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .story-mini-thumb {
-      width: 110px;
-      height: 90px;
-      border-radius: var(--radius-sm);
-      overflow: hidden;
-      flex-shrink: 0;
-    }
-
-    .story-mini-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .story-mini-info h4 {
-      font-size: 1.05rem;
-      font-weight: 700;
-      color: var(--usa-navy);
+    .product-category {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--araku-roast);
+      font-weight: 800;
       margin-bottom: 0.35rem;
+    }
+
+    .product-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--araku-forest);
+      margin-bottom: 0.4rem;
       line-height: 1.3;
     }
 
-    .story-mini-info p {
-      font-size: 0.82rem;
+    .product-desc {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      flex-grow: 1;
+    }
+
+    .product-price-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .price-tag {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .price-tag .amount {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--araku-forest);
+    }
+
+    .price-tag .unit {
+      font-size: 0.75rem;
       color: var(--text-muted);
     }
 
+    .action-btn {
+      background: var(--araku-emerald);
+      color: white;
+      padding: 0.6rem 1.1rem;
+      border-radius: var(--radius-pill);
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .action-btn:hover {
+      background: var(--araku-roast);
+      transform: translateY(-2px);
+    }
+
     /* ========================================================
-       CONTACT & TRIP INQUIRY (WITH CUSTOM CREDENTIALS)
+       FEATURE STORY & TRIBAL HERITAGE
     ======================================================== */
-    .contact-section {
-      background: linear-gradient(135deg, #091527 0%, var(--usa-deep-blue) 100%);
-      color: #ffffff;
+    .story-section {
+      background: linear-gradient(135deg, #06170e 0%, var(--araku-forest) 100%);
+      color: white;
       position: relative;
     }
 
-    .contact-wrapper {
+    .story-layout {
       display: grid;
-      grid-template-columns: 1fr 1.2fr;
+      grid-template-columns: 1fr 1fr;
       gap: 4rem;
       align-items: center;
     }
 
-    .contact-details h2 {
-      font-family: 'Cabinet Grotesk', 'Plus Jakarta Sans', sans-serif;
-      font-size: 2.75rem;
-      font-weight: 900;
-      margin-bottom: 1rem;
-      line-height: 1.15;
+    .story-image-mosaic {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      position: relative;
     }
 
-    .contact-details p {
+    .mosaic-item {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      height: 240px;
+    }
+
+    .mosaic-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .mosaic-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .mosaic-item:first-child {
+      grid-column: span 2;
+      height: 280px;
+    }
+
+    .story-text-content h2 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 2.75rem;
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 1.25rem;
+    }
+
+    .story-text-content p {
       color: #cbd5e1;
       font-size: 1.05rem;
-      margin-bottom: 2.5rem;
+      line-height: 1.7;
+      margin-bottom: 1.5rem;
+    }
+
+    .story-points {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin-bottom: 2.25rem;
+    }
+
+    .point-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+    }
+
+    .point-icon {
+      color: #86efac;
+      font-size: 1.2rem;
+      margin-top: 0.2rem;
+    }
+
+    /* ========================================================
+       DIRECT CONTACT & ORDERING SECTION
+    ======================================================== */
+    .contact-section {
+      background: #f1f5f9;
+      position: relative;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 3.5rem;
+      align-items: center;
+    }
+
+    .contact-info-panel h2 {
+      font-family: 'Cabinet Grotesk', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--araku-forest);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .contact-info-panel p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      margin-bottom: 2rem;
       line-height: 1.7;
     }
 
-    .contact-cards {
+    .contact-card-list {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
-      margin-bottom: 2.5rem;
+      margin-bottom: 2rem;
     }
 
-    .contact-card-item {
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      backdrop-filter: blur(8px);
+    .direct-card {
+      background: white;
       padding: 1.25rem 1.5rem;
       border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--araku-border);
       display: flex;
       align-items: center;
       gap: 1.25rem;
-      transition: var(--transition);
       text-decoration: none;
       color: inherit;
+      transition: var(--transition);
     }
 
-    .contact-card-item:hover {
-      background: rgba(255, 255, 255, 0.15);
-      border-color: #38bdf8;
+    .direct-card:hover {
       transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--araku-emerald);
     }
 
-    .contact-icon-box {
+    .card-icon-box {
       width: 48px;
       height: 48px;
       border-radius: var(--radius-pill);
-      background: linear-gradient(135deg, var(--usa-accent-red), #e11d48);
+      background: linear-gradient(135deg, var(--araku-emerald), #16a34a);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.2rem;
       color: white;
-      box-shadow: 0 4px 12px rgba(225, 29, 72, 0.4);
+      font-size: 1.25rem;
+      flex-shrink: 0;
     }
 
-    .contact-card-item.email-box .contact-icon-box {
-      background: linear-gradient(135deg, #0284c7, #0ea5e9);
-      box-shadow: 0 4px 12px rgba(14, 165, 233, 0.4);
+    .direct-card.email-type .card-icon-box {
+      background: linear-gradient(135deg, var(--araku-roast), var(--araku-coffee));
     }
 
-    .contact-card-item.direct-box .contact-icon-box {
-      background: linear-gradient(135deg, #059669, #10b981);
-      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
-    }
-
-    .contact-text-box span {
+    .card-meta span {
       display: block;
       font-size: 0.78rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: #94a3b8;
+      color: var(--text-muted);
       font-weight: 700;
     }
 
-    .contact-text-box strong {
-      font-size: 1.2rem;
-      color: #ffffff;
+    .card-meta strong {
+      font-size: 1.25rem;
+      color: var(--araku-forest);
       font-weight: 800;
     }
 
-    .contact-form-card {
-      background: #ffffff;
-      color: var(--text-main);
-      padding: 2.5rem;
+    /* Order Form */
+    .order-form-card {
+      background: white;
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-xl);
+      padding: 2.5rem;
+      box-shadow: var(--shadow-hover);
+      border: 1px solid var(--araku-border);
     }
 
-    .contact-form-card h3 {
+    .order-form-card h3 {
       font-size: 1.5rem;
       font-weight: 800;
-      color: var(--usa-navy);
-      margin-bottom: 0.5rem;
+      color: var(--araku-forest);
+      margin-bottom: 0.4rem;
     }
 
-    .contact-form-card p {
+    .order-form-card p {
       color: var(--text-muted);
       font-size: 0.9rem;
       margin-bottom: 1.5rem;
     }
 
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1.2rem;
+    }
+
     .form-group {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1.2rem;
     }
 
     .form-group label {
       display: block;
-      font-size: 0.82rem;
-      font-weight: 700;
+      font-size: 0.8rem;
+      font-weight: 800;
       color: #334155;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -1014,52 +836,46 @@
     .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 0.8rem 1rem;
+      padding: 0.75rem 1rem;
       border: 1px solid #cbd5e1;
       border-radius: var(--radius-sm);
       font-family: inherit;
       font-size: 0.95rem;
-      transition: var(--transition);
       background: #f8fafc;
+      transition: var(--transition);
     }
 
     .form-group input:focus,
     .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
-      border-color: var(--usa-blue);
-      background: #ffffff;
-      box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.12);
+      border-color: var(--araku-emerald);
+      background: white;
+      box-shadow: 0 0 0 3px rgba(20, 83, 45, 0.12);
     }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-    }
-
-    /* Modal Feedback */
-    .toast-notice {
-      display: none;
+    /* Modal Notice */
+    .toast-modal {
       position: fixed;
       bottom: 2rem;
       right: 2rem;
-      background: #0f172a;
+      background: var(--araku-forest);
       color: white;
       padding: 1rem 1.75rem;
       border-radius: var(--radius-md);
-      box-shadow: var(--shadow-xl);
-      z-index: 9999;
-      border-left: 4px solid #10b981;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+      border-left: 5px solid #22c55e;
+      display: none;
       align-items: center;
-      gap: 0.8rem;
+      gap: 1rem;
+      z-index: 9999;
     }
 
     /* ========================================================
        FOOTER
     ======================================================== */
     footer {
-      background: #050a12;
+      background: #06110a;
       color: #94a3b8;
       padding: 4.5rem 2rem 2rem;
       border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -1082,7 +898,7 @@
     }
 
     .footer-col h4 {
-      color: #ffffff;
+      color: white;
       font-size: 1rem;
       font-weight: 800;
       margin-bottom: 1.25rem;
@@ -1105,7 +921,7 @@
     }
 
     .footer-col ul a:hover {
-      color: #ffffff;
+      color: #86efac;
       padding-left: 4px;
     }
 
@@ -1122,44 +938,15 @@
       gap: 1rem;
     }
 
-    .social-icons {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .social-icons a {
-      width: 36px;
-      height: 36px;
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: var(--radius-pill);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #ffffff;
-      text-decoration: none;
-      transition: var(--transition);
-    }
-
-    .social-icons a:hover {
-      background: var(--usa-accent-red);
-      transform: translateY(-2px);
-    }
-
     /* Responsive */
     @media (max-width: 1024px) {
-      .hero-search-bar {
-        grid-template-columns: 1fr 1fr;
-      }
-      .road-trips-slider {
-        grid-template-columns: 1fr;
-      }
-      .experiences-grid {
+      .hero-highlights {
         grid-template-columns: repeat(2, 1fr);
       }
-      .stories-grid {
+      .story-layout {
         grid-template-columns: 1fr;
       }
-      .contact-wrapper {
+      .contact-grid {
         grid-template-columns: 1fr;
       }
       .footer-grid {
@@ -1171,16 +958,10 @@
       .nav-menu {
         display: none;
       }
-      .mobile-menu-toggle {
-        display: block;
-      }
-      .hero-search-bar {
+      .hero-highlights {
         grid-template-columns: 1fr;
       }
-      .stats-container {
-        grid-template-columns: 1fr 1fr;
-      }
-      .experiences-grid {
+      .products-grid {
         grid-template-columns: 1fr;
       }
       .form-row {
@@ -1194,275 +975,255 @@
 </head>
 <body>
 
-  <!-- Top Utility Bar with Direct Contact -->
-  <div class="top-utility-bar">
+  <!-- Top Utility Bar -->
+  <div class="utility-bar">
     <div>
-      <span>Official Destination Portal & Trip Planning Guide</span>
+      <span><i class="fa-solid fa-leaf" style="color: #4ade80;"></i> 100% Organic & Handpicked Tribal Products from Araku Valley</span>
     </div>
-    <div class="utility-links">
-      <a href="tel:9494177921" class="contact-badge" id="top-phone-link">
-        <i class="fa-solid fa-phone"></i> +91 9494177921
-      </a>
-      <a href="mailto:Krjh19@gmail.com" class="contact-badge" id="top-email-link">
-        <i class="fa-solid fa-envelope"></i> Krjh19@gmail.com
-      </a>
-      <a href="#trip-planner"><i class="fa-solid fa-compass"></i> Plan Trip</a>
+    <div>
+      <a href="tel:9494177921"><i class="fa-solid fa-phone"></i> +91 9494177921</a>
+      <a href="mailto:Krjh19@gmail.com"><i class="fa-solid fa-envelope"></i> Krjh19@gmail.com</a>
     </div>
   </div>
 
   <!-- Main Navigation Header -->
   <header class="main-header">
     <div class="navbar">
-      <a href="#" class="brand-logo" id="brand-logo-btn">
-        <div class="brand-stars">
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
-          <i class="fa-solid fa-star"></i>
+      <a href="#" class="brand-logo">
+        <div class="brand-emblem">
+          <i class="fa-solid fa-seedling"></i>
         </div>
-        <div class="brand-title">
-          <span class="small-pre">VISIT THE</span>
-          <span class="main-text">USA<span>.</span></span>
+        <div class="brand-names">
+          <span class="pre-title">TRIBAL HERITAGE OF</span>
+          <span class="main-title">ARAKU <span>PRODUCTS.</span></span>
         </div>
       </a>
 
-      <!-- Desktop Navigation Menu -->
       <ul class="nav-menu">
-        <li class="nav-item"><a href="#destinations" class="active">Destinations</a></li>
-        <li class="nav-item"><a href="#road-trips">Trip Ideas</a></li>
-        <li class="nav-item"><a href="#experiences">Experiences</a></li>
-        <li class="nav-item"><a href="#stories">Stories</a></li>
-        <li class="nav-item"><a href="#contact">Contact & Support</a></li>
+        <li><a href="#coffee" class="nav-link active">Araku Coffee</a></li>
+        <li><a href="#products" class="nav-link">Forest Honey & Spices</a></li>
+        <li><a href="#crafts" class="nav-link">Handicrafts</a></li>
+        <li><a href="#story" class="nav-link">Valley Story</a></li>
+        <li><a href="#contact" class="nav-link">Direct Order</a></li>
       </ul>
 
-      <!-- CTA Actions -->
       <div class="nav-actions">
-        <a href="#contact" class="btn btn-outline-white">Inquire Now</a>
-        <a href="tel:9494177921" class="btn btn-primary" id="header-call-btn">
+        <a href="#contact" class="btn btn-outline">Custom Order</a>
+        <a href="tel:9494177921" class="btn btn-primary">
           <i class="fa-solid fa-phone"></i> Call 9494177921
         </a>
-        <button class="mobile-menu-toggle" id="mobile-toggle" aria-label="Toggle navigation">
-          <i class="fa-solid fa-bars"></i>
-        </button>
       </div>
     </div>
   </header>
 
-  <!-- Hero Section -->
+  <!-- Hero Banner -->
   <section class="hero" id="home">
     <div class="hero-container">
-      <div class="hero-badge">
-        <i class="fa-solid fa-flag-usa"></i> America The Beautiful Experience
+      <div class="hero-tag">
+        <i class="fa-solid fa-certificate"></i> GI Tagged & Fair-Trade Certified
       </div>
       <h1 class="hero-title">
-        Discover Limitless Possibilities Across <span class="glow">The United States</span>
+        Pure Aromas & Flavors From <span>Araku Valley</span>
       </h1>
-      <p class="hero-description">
-        From dazzling metropolis skylines and legendary cross-country road trips to awe-inspiring national parks and coastal wonders — curate your unforgettable journey.
+      <p class="hero-subtitle">
+        Sourced straight from the lush Eastern Ghats mist-clad hills: award-winning shade-grown Arabica coffee, wild rock bee honey, organic pepper, and authentic tribal handicrafts.
       </p>
 
-      <div class="hero-quick-actions">
-        <a href="#destinations" class="btn btn-primary">
-          <i class="fa-solid fa-map-location-dot"></i> Explore Top States & Cities
+      <div class="hero-btns">
+        <a href="#products" class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1rem;">
+          <i class="fa-solid fa-basket-shopping"></i> Explore Araku Products
         </a>
-        <a href="#road-trips" class="btn btn-outline-white">
-          <i class="fa-solid fa-route"></i> Iconic Road Trips
+        <a href="tel:9494177921" class="btn btn-coffee" style="padding: 0.9rem 1.8rem; font-size: 1rem;">
+          <i class="fa-solid fa-phone"></i> Order via Call: 9494177921
         </a>
       </div>
 
-      <!-- Live Search / Trip Planner Box -->
-      <div class="hero-search-bar" id="trip-planner">
-        <div class="search-field">
-          <label><i class="fa-solid fa-location-dot"></i> Where do you want to go?</label>
-          <select id="hero-destination-select">
-            <option value="all">All 50 States & Territories</option>
-            <option value="ny">New York & Mid-Atlantic</option>
-            <option value="ca">California & West Coast</option>
-            <option value="fl">Florida & The Sunbelt</option>
-            <option value="az">Arizona & The Southwest</option>
-            <option value="co">Colorado & The Rockies</option>
-            <option value="hi">Hawaii & The Pacific</option>
-          </select>
-        </div>
-        <div class="search-field">
-          <label><i class="fa-solid fa-mountain-sun"></i> Experience Type</label>
-          <select id="hero-experience-select">
-            <option value="all">All Experiences</option>
-            <option value="national-parks">National Parks & Outdoors</option>
-            <option value="cities">Iconic Cities & Skylines</option>
-            <option value="road-trips">Cross-Country Road Trips</option>
-            <option value="beaches">Coastal Beaches & Islands</option>
-            <option value="culture">Arts, Food & Music</option>
-          </select>
-        </div>
-        <div class="search-field">
-          <label><i class="fa-solid fa-calendar-days"></i> Travel Season</label>
-          <select id="hero-season-select">
-            <option value="any">Any Time of Year</option>
-            <option value="summer">Summer (Jun - Aug)</option>
-            <option value="fall">Fall Foliage (Sep - Nov)</option>
-            <option value="winter">Winter Wonderland (Dec - Feb)</option>
-            <option value="spring">Spring Blossom (Mar - May)</option>
-          </select>
-        </div>
-        <div>
-          <button class="btn btn-primary" id="btn-find-trips" style="width: 100%; height: 50px;">
-            <i class="fa-solid fa-magnifying-glass"></i> Find Trips
-          </button>
-        </div>
+      <!-- Quick Highlights -->
+      <div class="hero-highlights">
+        <a href="#coffee" class="hero-box">
+          <div class="hero-box-icon"><i class="fa-solid fa-mug-hot"></i></div>
+          <div class="hero-box-text">
+            <h4>Arabica Coffee</h4>
+            <p>High-altitude shade grown</p>
+          </div>
+        </a>
+        <a href="#products" class="hero-box">
+          <div class="hero-box-icon" style="background: #f59e0b;"><i class="fa-solid fa-jar"></i></div>
+          <div class="hero-box-text">
+            <h4>Wild Forest Honey</h4>
+            <p>Raw & unprocessed</p>
+          </div>
+        </a>
+        <a href="#products" class="hero-box">
+          <div class="hero-box-icon" style="background: #10b981;"><i class="fa-solid fa-pepper-hot"></i></div>
+          <div class="hero-box-text">
+            <h4>Hill Spices</h4>
+            <p>Black pepper & turmeric</p>
+          </div>
+        </a>
+        <a href="#crafts" class="hero-box">
+          <div class="hero-box-icon" style="background: #8b5cf6;"><i class="fa-solid fa-brush"></i></div>
+          <div class="hero-box-text">
+            <h4>Tribal Crafts</h4>
+            <p>Handmade bamboo & wood</p>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Stats Strip -->
-  <div class="stats-strip">
-    <div class="stats-container">
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-landmark-flag"></i></div>
-        <div class="stat-info">
-          <h4>50 States</h4>
-          <p>And 5 Unique Territories</p>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-tree"></i></div>
-        <div class="stat-info">
-          <h4>63 Parks</h4>
-          <p>Protected National Parks</p>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-road"></i></div>
-        <div class="stat-info">
-          <h4>4M+ Miles</h4>
-          <p>Of Scenic Open Highways</p>
-        </div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-icon"><i class="fa-solid fa-headset"></i></div>
-        <div class="stat-info">
-          <h4>24/7 Helpline</h4>
-          <p>+91 9494177921</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Featured Destinations Section -->
-  <section id="destinations">
+  <!-- Featured Araku Products Grid -->
+  <section id="products">
     <div class="container">
       <div class="section-header">
         <div>
-          <span class="section-badge"><i class="fa-solid fa-star"></i> Handpicked Hotspots</span>
-          <h2 class="section-title">Iconic States & Cities</h2>
-          <p class="section-subtitle">Immerse yourself in world-renowned cultural capitals, natural wonders, and vibrant districts.</p>
+          <span class="section-tag"><i class="fa-solid fa-bag-shopping"></i> Direct From Farmers</span>
+          <h2 class="section-title">Authentic Araku Products</h2>
+          <p class="section-desc">Hand-harvested by local tribal cooperatives, preserving traditional organic agriculture without synthetic fertilizers.</p>
         </div>
-        <div class="filter-pills" id="destination-filters">
-          <button class="filter-btn active" data-filter="all">All Highlights</button>
-          <button class="filter-btn" data-filter="cities">Vibrant Cities</button>
-          <button class="filter-btn" data-filter="parks">National Parks</button>
-          <button class="filter-btn" data-filter="beaches">Coastal</button>
+        <div class="filter-pills" id="product-filters">
+          <button class="filter-btn active" data-filter="all">All Items</button>
+          <button class="filter-btn" data-filter="coffee">Specialty Coffee</button>
+          <button class="filter-btn" data-filter="honey">Honey & Spices</button>
+          <button class="filter-btn" data-filter="crafts">Tribal Art</button>
         </div>
       </div>
 
-      <div class="destinations-grid" id="destinations-list">
-        <!-- New York -->
-        <div class="destination-card" data-category="cities">
-          <div class="card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?auto=format&fit=crop&w=800&q=80" alt="New York City Skyline">
-            <span class="card-tag">Urban Energy</span>
-            <span class="card-state">New York</span>
+      <div class="products-grid" id="products-catalog">
+        <!-- 1. Araku Signature Arabica -->
+        <div class="product-card" data-category="coffee">
+          <div class="card-thumb">
+            <img src="images/Collage Backgrounds #17 (02).jpg" alt="Araku Signature Roasted Coffee">
+            <span class="badge-pill">Bestseller</span>
+            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Paderu Hills</span>
           </div>
-          <div class="card-body">
-            <h3>New York City</h3>
-            <p>From Broadway lights and Times Square to Central Park walks and culinary wonders across Manhattan and Brooklyn.</p>
-            <div class="card-footer">
-              <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (1.8k)</div>
-              <a href="#contact" class="card-link">Plan Trip <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-content">
+            <span class="product-category">Specialty Coffee</span>
+            <h3 class="product-title">Araku Grand Arabica Beans</h3>
+            <p class="product-desc">Medium-dark roast featuring notes of dark chocolate, citrus zest, and roasted almonds from 1100m elevation.</p>
+            <div class="product-price-bar">
+              <div class="price-tag">
+                <span class="amount">₹499</span>
+                <span class="unit">250g Vacuum Pack</span>
+              </div>
+              <button class="action-btn" onclick="orderItem('Araku Grand Arabica Beans')">
+                <i class="fa-solid fa-cart-plus"></i> Order Now
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Grand Canyon -->
-        <div class="destination-card" data-category="parks">
-          <div class="card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1474044159687-1ee9f3a51722?auto=format&fit=crop&w=800&q=80" alt="Grand Canyon National Park">
-            <span class="card-tag">Natural Wonder</span>
-            <span class="card-state">Arizona</span>
+        <!-- 2. Pure Forest Honey -->
+        <div class="product-card" data-category="honey">
+          <div class="card-thumb">
+            <img src="images/Collage Backgrounds #17 (03).jpg" alt="Pure Araku Forest Honey">
+            <span class="badge-pill" style="color: #fed7aa;">100% Raw</span>
+            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Chintapalli Forest</span>
           </div>
-          <div class="card-body">
-            <h3>Grand Canyon</h3>
-            <p>Stand on the rim of one of the world's greatest natural geological masterpieces carved over millions of years by the Colorado River.</p>
-            <div class="card-footer">
-              <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (2.4k)</div>
-              <a href="#contact" class="card-link">Plan Trip <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-content">
+            <span class="product-category">Wild Honey</span>
+            <h3 class="product-title">Araku Wild Rock-Bee Honey</h3>
+            <p class="product-desc">Unheated, unfiltered nectar collected from natural wild hives in the dense canopies of Eastern Ghats.</p>
+            <div class="product-price-bar">
+              <div class="price-tag">
+                <span class="amount">₹380</span>
+                <span class="unit">500g Glass Jar</span>
+              </div>
+              <button class="action-btn" onclick="orderItem('Araku Wild Rock-Bee Honey')">
+                <i class="fa-solid fa-cart-plus"></i> Order Now
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- San Francisco & California -->
-        <div class="destination-card" data-category="cities">
-          <div class="card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=800&q=80" alt="Golden Gate Bridge San Francisco">
-            <span class="card-tag">Coastal Icon</span>
-            <span class="card-state">California</span>
+        <!-- 3. Organic Hill Black Pepper -->
+        <div class="product-card" data-category="honey">
+          <div class="card-thumb">
+            <img src="images/Collage Backgrounds #17 (04).jpg" alt="Araku Organic Black Pepper">
+            <span class="badge-pill">High Piperine</span>
+            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Coffee Plantations</span>
           </div>
-          <div class="card-body">
-            <h3>San Francisco & Bay</h3>
-            <p>Gaze at the Golden Gate Bridge, ride historical cable cars, taste coastal sourdough, and explore Silicon Valley and Napa Valley.</p>
-            <div class="card-footer">
-              <div class="card-rating"><i class="fa-solid fa-star"></i> 4.8 (1.6k)</div>
-              <a href="#contact" class="card-link">Plan Trip <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-content">
+            <span class="product-category">Tribal Spices</span>
+            <h3 class="product-title">Organic Estate Black Pepper</h3>
+            <p class="product-desc">Grown on the shade trees of coffee estates. Sun-dried with intensely sharp aroma and rich pungent flavor.</p>
+            <div class="product-price-bar">
+              <div class="price-tag">
+                <span class="amount">₹240</span>
+                <span class="unit">200g Pouch</span>
+              </div>
+              <button class="action-btn" onclick="orderItem('Organic Estate Black Pepper')">
+                <i class="fa-solid fa-cart-plus"></i> Order Now
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Miami & Florida Keys -->
-        <div class="destination-card" data-category="beaches">
-          <div class="card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1506953823976-52e1fdc0149a?auto=format&fit=crop&w=800&q=80" alt="Miami South Beach Florida">
-            <span class="card-tag">Tropical & Art Deco</span>
-            <span class="card-state">Florida</span>
+        <!-- 4. Bamboo Handicrafts -->
+        <div class="product-card" data-category="crafts">
+          <div class="card-thumb">
+            <img src="images/Collage Backgrounds #17 (05).jpg" alt="Araku Tribal Bamboo Crafts">
+            <span class="badge-pill" style="color: #bae6fd;">Handcrafted</span>
+            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Dumbriguda Tribal Guild</span>
           </div>
-          <div class="card-body">
-            <h3>Miami & Florida Keys</h3>
-            <p>Sun-drenched beaches, Art Deco architectural charm, pulsing Latin nightlife, and scenic coral reefs in the Overseas Highway.</p>
-            <div class="card-footer">
-              <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (1.3k)</div>
-              <a href="#contact" class="card-link">Plan Trip <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-content">
+            <span class="product-category">Art & Craft</span>
+            <h3 class="product-title">Traditional Bamboo Lamp & Decor</h3>
+            <p class="product-desc">Finely hand-carved bamboo decor made by indigenous artisans keeping centuries of folklore traditions alive.</p>
+            <div class="product-price-bar">
+              <div class="price-tag">
+                <span class="amount">₹650</span>
+                <span class="unit">Per Unique Piece</span>
+              </div>
+              <button class="action-btn" onclick="orderItem('Traditional Bamboo Lamp')">
+                <i class="fa-solid fa-cart-plus"></i> Order Now
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Yellowstone National Park -->
-        <div class="destination-card" data-category="parks">
-          <div class="card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1544644181-1484b3fdfc62?auto=format&fit=crop&w=800&q=80" alt="Yellowstone Geyser">
-            <span class="card-tag">Geothermal Haven</span>
-            <span class="card-state">Wyoming</span>
+        <!-- 5. Organic Kasturi Turmeric -->
+        <div class="product-card" data-category="honey">
+          <div class="card-thumb">
+            <img src="images/Collage Backgrounds #17 (06).jpg" alt="Araku High Curcumin Turmeric">
+            <span class="badge-pill">6%+ Curcumin</span>
+            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> G. Madugula Hills</span>
           </div>
-          <div class="card-body">
-            <h3>Yellowstone</h3>
-            <p>America's first national park, featuring dramatic geysers like Old Faithful, prismatic hot springs, and abundant wildlife.</p>
-            <div class="card-footer">
-              <div class="card-rating"><i class="fa-solid fa-star"></i> 4.9 (2.1k)</div>
-              <a href="#contact" class="card-link">Plan Trip <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-content">
+            <span class="product-category">Heritage Spices</span>
+            <h3 class="product-title">Wild Curcumin Yellow Turmeric</h3>
+            <p class="product-desc">Heirloom organic turmeric roots ground slowly without losing natural essential oils and therapeutic potency.</p>
+            <div class="product-price-bar">
+              <div class="price-tag">
+                <span class="amount">₹180</span>
+                <span class="unit">250g Jar</span>
+              </div>
+              <button class="action-btn" onclick="orderItem('Wild Curcumin Yellow Turmeric')">
+                <i class="fa-solid fa-cart-plus"></i> Order Now
+              </button>
             </div>
           </div>
         </div>
 
-        <!-- Oahu & Maui, Hawaii -->
-        <div class="destination-card" data-category="beaches">
-          <div class="card-img-wrapper">
-            <img src="https://images.unsplash.com/photo-1542259009477-d625272157b7?auto=format&fit=crop&w=800&q=80" alt="Hawaii Tropical Beach">
-            <span class="card-tag">Island Paradise</span>
-            <span class="card-state">Hawaii</span>
+        <!-- 6. Dark Roast Espresso Powder -->
+        <div class="product-card" data-category="coffee">
+          <div class="card-thumb">
+            <img src="images/Collage Backgrounds #17 (07).jpg" alt="Araku Dark Roast Coffee Powder">
+            <span class="badge-pill">Barista Pick</span>
+            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Ananthagiri Peak</span>
           </div>
-          <div class="card-body">
-            <h3>Hawaii Islands</h3>
-            <p>Aloha spirit, dramatic volcanic calderas, lush rainforests, surfing breaks on North Shore, and authentic Polynesian culture.</p>
-            <div class="card-footer">
-              <div class="card-rating"><i class="fa-solid fa-star"></i> 5.0 (3.1k)</div>
-              <a href="#contact" class="card-link">Plan Trip <i class="fa-solid fa-arrow-right"></i></a>
+          <div class="product-content">
+            <span class="product-category">Specialty Coffee</span>
+            <h3 class="product-title">Araku French Roast Filter Coffee</h3>
+            <p class="product-desc">85% Micro-lot Arabica with 15% roasted chicory blend for the velvety traditional South Indian morning brew.</p>
+            <div class="product-price-bar">
+              <div class="price-tag">
+                <span class="amount">₹320</span>
+                <span class="unit">250g Fresh Grind</span>
+              </div>
+              <button class="action-btn" onclick="orderItem('Araku French Roast Filter Coffee')">
+                <i class="fa-solid fa-cart-plus"></i> Order Now
+              </button>
             </div>
           </div>
         </div>
@@ -1470,286 +1231,160 @@
     </div>
   </section>
 
-  <!-- Iconic Road Trips Section -->
-  <section class="road-trips-section" id="road-trips">
+  <!-- Story & Heritage Section -->
+  <section class="story-section" id="story">
     <div class="container">
-      <div class="section-header">
-        <div>
-          <span class="section-badge" style="color: #38bdf8;"><i class="fa-solid fa-road"></i> Endless Highways</span>
-          <h2 class="section-title">Great American Road Trips</h2>
-          <p class="section-subtitle">Experience the quintessential freedom of the open road across majestic landscapes, neon diners, and mountain passes.</p>
-        </div>
-        <div>
-          <a href="#contact" class="btn btn-outline-white">Request Route Map</a>
-        </div>
-      </div>
-
-      <div class="road-trips-slider">
-        <!-- Route 66 -->
-        <div class="trip-card">
-          <div class="trip-img">
-            <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=700&q=80" alt="Historic Route 66 Highway">
+      <div class="story-layout">
+        <div class="story-image-mosaic">
+          <div class="mosaic-item">
+            <img src="images/Collage Backgrounds #17 (08).jpg" alt="Araku Valley Mist and Mountains">
           </div>
-          <div class="trip-meta">
-            <span><i class="fa-solid fa-clock"></i> 14 Days</span>
-            <span><i class="fa-solid fa-map-pin"></i> 2,448 Miles</span>
+          <div class="mosaic-item">
+            <img src="images/Collage Backgrounds #17 (09).jpg" alt="Coffee Cherries Picking">
           </div>
-          <h3>Historic Route 66</h3>
-          <p>The "Mother Road" connecting Chicago to Santa Monica through eight states, nostalgic mid-century diners, retro motels, and neon signs.</p>
-          <div class="trip-stops">
-            <i class="fa-solid fa-car"></i> Chicago &bull; St. Louis &bull; Amarillo &bull; Santa Fe &bull; Los Angeles
+          <div class="mosaic-item">
+            <img src="images/Collage Backgrounds #17 (10).jpg" alt="Tribal Artisans at work">
           </div>
         </div>
 
-        <!-- Pacific Coast Highway -->
-        <div class="trip-card">
-          <div class="trip-img">
-            <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=700&q=80" alt="Pacific Coast Highway Big Sur">
+        <div class="story-text-content">
+          <span class="section-tag" style="color: #86efac;"><i class="fa-solid fa-mountain"></i> The Sacred Hills</span>
+          <h2>Grown in Harmony with Nature by Tribal Communities</h2>
+          <p>
+            Nestled in the lush Eastern Ghats of Andhra Pradesh at an altitude between 900 to 1,400 meters, Araku Valley's rich red laterite soil and perpetual morning mist create the ideal ecosystem for organic crops.
+          </p>
+          <div class="story-points">
+            <div class="point-item">
+              <i class="fa-solid fa-shield-halved point-icon"></i>
+              <div>
+                <strong style="color: white;">100% Chemical-Free</strong>
+                <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0;">Regenerative farming practices that enrich soil fertility and biodiversity.</p>
+              </div>
+            </div>
+            <div class="point-item">
+              <i class="fa-solid fa-hand-holding-heart point-icon"></i>
+              <div>
+                <strong style="color: white;">Empowering 10,000+ Tribal Families</strong>
+                <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0;">Direct purchase ensures fair livelihood and ethical trade dividends to local farmers.</p>
+              </div>
+            </div>
+            <div class="point-item">
+              <i class="fa-solid fa-award point-icon"></i>
+              <div>
+                <strong style="color: white;">Global Acclaim</strong>
+                <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0;">Araku coffee has won prestigious awards in Paris and global specialty coffee competitions.</p>
+              </div>
+            </div>
           </div>
-          <div class="trip-meta">
-            <span><i class="fa-solid fa-clock"></i> 7 Days</span>
-            <span><i class="fa-solid fa-map-pin"></i> 655 Miles</span>
-          </div>
-          <h3>Pacific Coast Highway (Hwy 1)</h3>
-          <p>Hug the sheer coastal cliffs of California, cross Big Sur's Bixby Creek Bridge, and watch sunset over the roaring Pacific Ocean.</p>
-          <div class="trip-stops">
-            <i class="fa-solid fa-car"></i> San Francisco &bull; Monterey &bull; Big Sur &bull; Santa Barbara &bull; LA
-          </div>
-        </div>
 
-        <!-- Blue Ridge Parkway -->
-        <div class="trip-card">
-          <div class="trip-img">
-            <img src="https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&w=700&q=80" alt="Blue Ridge Parkway Mountains">
-          </div>
-          <div class="trip-meta">
-            <span><i class="fa-solid fa-clock"></i> 5 Days</span>
-            <span><i class="fa-solid fa-map-pin"></i> 469 Miles</span>
-          </div>
-          <h3>Blue Ridge Parkway</h3>
-          <p>America's favorite scenic drive connecting Shenandoah and the Great Smoky Mountains through misty peaks and vibrant Appalachian folk music.</p>
-          <div class="trip-stops">
-            <i class="fa-solid fa-car"></i> Virginia &bull; Roanoke &bull; Asheville &bull; Great Smokies &bull; NC
-          </div>
+          <a href="#contact" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d);">
+            <i class="fa-solid fa-seedling"></i> Inquire Wholesale & Retail
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experiences Section -->
-  <section id="experiences">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <span class="section-badge"><i class="fa-solid fa-compass"></i> Tailored Adventures</span>
-          <h2 class="section-title">Experiences Beyond The Ordinary</h2>
-          <p class="section-subtitle">Whether your passion is culinary mastery, heart-pumping outdoor excursions, or artistic heritage, the USA has it all.</p>
-        </div>
-      </div>
-
-      <div class="experiences-grid">
-        <div class="exp-item">
-          <img src="https://images.unsplash.com/photo-1519074069444-1ba4ea16e843?auto=format&fit=crop&w=600&q=80" alt="National Parks & Hiking">
-          <div class="exp-overlay">
-            <h4>Outdoors & Wilderness</h4>
-            <p>Hike Yosemite, raft through Zion slot canyons, or kayak crystalline lakes in Glacier.</p>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Culinary & Dining">
-          <div class="exp-overlay">
-            <h4>Culinary Traditions</h4>
-            <p>Savor authentic Southern BBQ in Texas, New Orleans gumbo, and Napa Valley wine tasting.</p>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=600&q=80" alt="Music & Arts Heritage">
-          <div class="exp-overlay">
-            <h4>Music & Cultural Roots</h4>
-            <p>Trace jazz in New Orleans, country in Nashville, blues in Memphis, and Motown in Detroit.</p>
-          </div>
-        </div>
-
-        <div class="exp-item">
-          <img src="https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=600&q=80" alt="Entertainment & Theme Parks">
-          <div class="exp-overlay">
-            <h4>Entertainment & Magic</h4>
-            <p>World-class theme parks in Orlando, Hollywood studios in California, and Las Vegas spectacles.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stories & Inspiration Section -->
-  <section style="background: #ffffff;" id="stories">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <span class="section-badge"><i class="fa-solid fa-book-open"></i> Traveler Tales</span>
-          <h2 class="section-title">Stories That Inspire</h2>
-          <p class="section-subtitle">Real travel guides, photographer journeys, and local voices highlighting the diverse fabric of America.</p>
-        </div>
-      </div>
-
-      <div class="stories-grid">
-        <!-- Feature Story -->
-        <div class="story-hero-card">
-          <div class="story-hero-img">
-            <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?auto=format&fit=crop&w=900&q=80" alt="Vanlife roadtrip in America">
-          </div>
-          <div class="story-hero-content">
-            <div class="story-meta">
-              <span class="category">Featured Itinerary</span>
-              <span>&bull;</span>
-              <span>10 Min Read</span>
-            </div>
-            <h3>Across the Painted Desert: A Photographer’s Guide to the Southwest</h3>
-            <p style="color: #64748b; margin-bottom: 1.25rem;">
-              Journey through the mystical sandstone arches of Utah, the crimson red rocks of Sedona, and sunset vistas over Monument Valley. Discover the secrets to chasing golden hour across the Navajo Nation.
-            </p>
-            <a href="#contact" class="card-link">Read Full Travel Story <i class="fa-solid fa-arrow-right"></i></a>
-          </div>
-        </div>
-
-        <!-- Sidebar Stories -->
-        <div class="story-side-list">
-          <div class="story-mini-card">
-            <div class="story-mini-thumb">
-              <img src="https://images.unsplash.com/photo-1534447677768-be436bb09401?auto=format&fit=crop&w=300&q=80" alt="New Orleans French Quarter">
-            </div>
-            <div class="story-mini-info">
-              <h4>Soul of New Orleans: Jazz, Beignets & Bayou Magic</h4>
-              <p>Explore the cobblestone French Quarter streets filled with brass bands and cajun culinary wonders.</p>
-            </div>
-          </div>
-
-          <div class="story-mini-card">
-            <div class="story-mini-thumb">
-              <img src="https://images.unsplash.com/photo-1517824806704-9040b037703b?auto=format&fit=crop&w=300&q=80" alt="Rocky Mountains Wildlife">
-            </div>
-            <div class="story-mini-info">
-              <h4>Encounters in the Rockies: Wildlife Watching in Colorado</h4>
-              <p>Tips for spotting elk herds, bighorn sheep, and soaring golden eagles along Trail Ridge Road.</p>
-            </div>
-          </div>
-
-          <div class="story-mini-card">
-            <div class="story-mini-thumb">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=300&q=80" alt="Chicago Architecture River Cruise">
-            </div>
-            <div class="story-mini-info">
-              <h4>Chicago by River: Modern Skyscraper Marvels</h4>
-              <p>Take an architectural boat cruise and marvel at the birthplace of contemporary skyscrapers.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact & Travel Desk Section (With user details: 9494177921 & Krjh19@gmail.com) -->
+  <!-- Contact & Direct Order Desk -->
   <section class="contact-section" id="contact">
     <div class="container">
-      <div class="contact-wrapper">
-        <!-- Contact Details -->
-        <div class="contact-details">
-          <span class="section-badge" style="color: #38bdf8;"><i class="fa-solid fa-headset"></i> Official Travel Desk</span>
-          <h2>Plan Your Dream American Journey</h2>
+      <div class="contact-grid">
+        <!-- Direct Contact Details -->
+        <div class="contact-info-panel">
+          <span class="section-tag"><i class="fa-solid fa-truck-fast"></i> Quick Delivery Across India</span>
+          <h2>Connect With Araku Products Desk</h2>
           <p>
-            Have questions regarding visa facilitation, customized interstate itineraries, hotel bookings, or guided national park permits? Get in direct contact with our dedicated travel desk.
+            Looking for authentic Araku coffee bags, corporate gift hampers, wholesale spices, or custom delivery? Contact us directly via phone, WhatsApp, or email.
           </p>
 
-          <div class="contact-cards">
-            <!-- Mobile Contact -->
-            <a href="tel:9494177921" class="contact-card-item direct-box" id="contact-phone-card">
-              <div class="contact-icon-box">
-                <i class="fa-solid fa-phone-volume"></i>
+          <div class="contact-card-list">
+            <!-- Mobile -->
+            <a href="tel:9494177921" class="direct-card" id="contact-tel-link">
+              <div class="card-icon-box">
+                <i class="fa-solid fa-phone"></i>
               </div>
-              <div class="contact-text-box">
-                <span>Call & WhatsApp Helpline</span>
+              <div class="card-meta">
+                <span>Phone & WhatsApp Helpline</span>
                 <strong>+91 9494177921</strong>
               </div>
             </a>
 
-            <!-- Email Contact -->
-            <a href="mailto:Krjh19@gmail.com" class="contact-card-item email-box" id="contact-email-card">
-              <div class="contact-icon-box">
-                <i class="fa-solid fa-envelope-open-text"></i>
+            <!-- Email -->
+            <a href="mailto:Krjh19@gmail.com" class="direct-card email-type" id="contact-mail-link">
+              <div class="card-icon-box">
+                <i class="fa-solid fa-envelope"></i>
               </div>
-              <div class="contact-text-box">
-                <span>Official Inquiries & Bookings</span>
+              <div class="card-meta">
+                <span>Official Orders & Queries</span>
                 <strong>Krjh19@gmail.com</strong>
               </div>
             </a>
 
-            <!-- Address / Office -->
-            <div class="contact-card-item">
-              <div class="contact-icon-box" style="background: linear-gradient(135deg, #7c3aed, #9333ea);">
+            <!-- Location -->
+            <div class="direct-card">
+              <div class="card-icon-box" style="background: linear-gradient(135deg, #d97706, #b45309);">
                 <i class="fa-solid fa-location-dot"></i>
               </div>
-              <div class="contact-text-box">
-                <span>Travel Support Desk</span>
-                <strong>USA Tourism Support & Travel Advisory Desk</strong>
+              <div class="card-meta">
+                <span>Supply Hub</span>
+                <strong>Araku Valley & Visakhapatnam, Andhra Pradesh</strong>
               </div>
             </div>
           </div>
 
-          <div style="display: flex; gap: 0.75rem;">
+          <div style="display: flex; gap: 1rem;">
             <a href="tel:9494177921" class="btn btn-primary">
-              <i class="fa-solid fa-phone"></i> Instant Call: 9494177921
+              <i class="fa-solid fa-phone-volume"></i> Direct Call: 9494177921
             </a>
-            <a href="mailto:Krjh19@gmail.com" class="btn btn-outline-white">
-              <i class="fa-solid fa-envelope"></i> Email Us
+            <a href="mailto:Krjh19@gmail.com" class="btn btn-coffee">
+              <i class="fa-solid fa-paper-plane"></i> Email Krjh19@gmail.com
             </a>
           </div>
         </div>
 
-        <!-- Interactive Inquiry Form -->
-        <div class="contact-form-card">
-          <h3>Request Custom Trip Planning</h3>
-          <p>Tell us your preferred travel dates and destinations, and our specialist will connect back within hours.</p>
+        <!-- Interactive Direct Order Form -->
+        <div class="order-form-card">
+          <h3>Place an Order / Custom Inquiry</h3>
+          <p>Fill in your requirements and we will send payment options and dispatch tracking immediately.</p>
 
-          <form id="trip-inquiry-form" onsubmit="event.preventDefault(); submitInquiry();">
+          <form id="product-order-form" onsubmit="event.preventDefault(); submitOrder();">
             <div class="form-row">
               <div class="form-group">
-                <label for="full-name">Full Name *</label>
-                <input type="text" id="full-name" required placeholder="e.g. John Doe">
+                <label for="cust-name">Your Full Name *</label>
+                <input type="text" id="cust-name" required placeholder="e.g. Raj Kumar">
               </div>
               <div class="form-group">
-                <label for="traveler-email">Email Address *</label>
-                <input type="email" id="traveler-email" required placeholder="name@example.com">
+                <label for="cust-phone">Mobile Number *</label>
+                <input type="tel" id="cust-phone" required placeholder="9494177921">
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="traveler-phone">Mobile / WhatsApp *</label>
-                <input type="tel" id="traveler-phone" required placeholder="+91 9876543210">
+                <label for="cust-email">Email Address *</label>
+                <input type="email" id="cust-email" required placeholder="Krjh19@gmail.com">
               </div>
               <div class="form-group">
-                <label for="destination-target">Preferred Destination *</label>
-                <select id="destination-target">
-                  <option value="New York & East Coast">New York & East Coast</option>
-                  <option value="California & West Coast">California & West Coast</option>
-                  <option value="Grand Canyon & Arizona">Grand Canyon & Arizona</option>
-                  <option value="Florida & Miami">Florida & Miami</option>
-                  <option value="Route 66 Cross Country">Route 66 Cross Country</option>
-                  <option value="Hawaii & Islands">Hawaii & Islands</option>
-                  <option value="Other / Multiple States">Other / Multiple States</option>
+                <label for="selected-product">Select Product *</label>
+                <select id="selected-product">
+                  <option value="Araku Grand Arabica Beans (250g)">Araku Grand Arabica Beans (250g)</option>
+                  <option value="Araku Wild Rock-Bee Honey (500g)">Araku Wild Rock-Bee Honey (500g)</option>
+                  <option value="Organic Estate Black Pepper (200g)">Organic Estate Black Pepper (200g)</option>
+                  <option value="Traditional Bamboo Lamp & Decor">Traditional Bamboo Lamp & Decor</option>
+                  <option value="Wild Curcumin Yellow Turmeric (250g)">Wild Curcumin Yellow Turmeric (250g)</option>
+                  <option value="Araku French Roast Filter Coffee (250g)">Araku French Roast Filter Coffee (250g)</option>
+                  <option value="Custom Gift Hamper / Bulk Order">Custom Gift Hamper / Bulk Order</option>
                 </select>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="trip-notes">Special Requests & Dates</label>
-              <textarea id="trip-notes" rows="3" placeholder="Tell us about the number of travelers, duration, and dream activities..."></textarea>
+              <label for="delivery-address">Delivery Address & Quantity</label>
+              <textarea id="delivery-address" rows="3" placeholder="Enter delivery pincode, full address, and package count..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.9rem;">
-              <i class="fa-solid fa-paper-plane"></i> Submit Travel Inquiry
+            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 1rem;">
+              <i class="fa-solid fa-circle-check"></i> Submit Order Request
             </button>
           </form>
         </div>
@@ -1757,12 +1392,12 @@
     </div>
   </section>
 
-  <!-- Success Toast Modal -->
-  <div class="toast-notice" id="toast">
-    <i class="fa-solid fa-circle-check" style="color: #10b981; font-size: 1.4rem;"></i>
+  <!-- Notification Toast -->
+  <div class="toast-modal" id="order-toast">
+    <i class="fa-solid fa-circle-check" style="font-size: 1.8rem; color: #4ade80;"></i>
     <div>
-      <strong>Inquiry Submitted Successfully!</strong>
-      <div style="font-size: 0.85rem; color: #cbd5e1;">Our team will reach out to you via mobile & email.</div>
+      <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Order Request Received!</h4>
+      <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Our team will call or WhatsApp you at +91 9494177921 for dispatch verification.</p>
     </div>
   </div>
 
@@ -1770,94 +1405,84 @@
   <footer>
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="brand-logo" style="margin-bottom: 0.5rem;">
-          <div class="brand-stars">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+        <div class="brand-logo" style="margin-bottom: 0.75rem;">
+          <div class="brand-emblem">
+            <i class="fa-solid fa-seedling"></i>
           </div>
-          <div class="brand-title">
-            <span class="small-pre">VISIT THE</span>
-            <span class="main-text" style="color: white;">USA<span>.</span></span>
+          <div class="brand-names">
+            <span class="pre-title" style="color: #86efac;">TRIBAL HERITAGE</span>
+            <span class="main-title" style="color: white;">ARAKU <span style="color: #f59e0b;">PRODUCTS</span></span>
           </div>
         </div>
         <p>
-          Visit The USA inspires international and domestic travelers to experience the exceptional people, places, and diverse culture across the 50 states.
+          Celebrating the finest organic harvests and hand-crafted wonders nurtured by tribal communities in the picturesque hills of Araku Valley.
         </p>
-        <div style="font-size: 0.88rem; color: #cbd5e1; margin-bottom: 0.5rem;">
-          <strong>Helpline:</strong> <a href="tel:9494177921" style="color: #38bdf8; text-decoration: none;">+91 9494177921</a>
+        <div style="font-size: 0.88rem; margin-bottom: 0.4rem;">
+          <strong style="color: white;">Phone:</strong> <a href="tel:9494177921" style="color: #86efac; text-decoration: none;">+91 9494177921</a>
         </div>
-        <div style="font-size: 0.88rem; color: #cbd5e1;">
-          <strong>Email:</strong> <a href="mailto:Krjh19@gmail.com" style="color: #38bdf8; text-decoration: none;">Krjh19@gmail.com</a>
+        <div style="font-size: 0.88rem;">
+          <strong style="color: white;">Email:</strong> <a href="mailto:Krjh19@gmail.com" style="color: #86efac; text-decoration: none;">Krjh19@gmail.com</a>
         </div>
       </div>
 
       <div class="footer-col">
-        <h4>Destinations</h4>
+        <h4>Organic Range</h4>
         <ul>
-          <li><a href="#destinations">New York City</a></li>
-          <li><a href="#destinations">California & West Coast</a></li>
-          <li><a href="#destinations">Grand Canyon & Southwest</a></li>
-          <li><a href="#destinations">Miami & Florida</a></li>
-          <li><a href="#destinations">Yellowstone & Rockies</a></li>
-          <li><a href="#destinations">Hawaii Islands</a></li>
+          <li><a href="#products">Arabica Beans</a></li>
+          <li><a href="#products">Filter Coffee Blends</a></li>
+          <li><a href="#products">Rock Bee Honey</a></li>
+          <li><a href="#products">Organic Black Pepper</a></li>
+          <li><a href="#products">Wild Turmeric</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Trip Ideas</h4>
+        <h4>Art & Culture</h4>
         <ul>
-          <li><a href="#road-trips">Historic Route 66</a></li>
-          <li><a href="#road-trips">Pacific Coast Highway</a></li>
-          <li><a href="#road-trips">Blue Ridge Parkway</a></li>
-          <li><a href="#experiences">National Park Passes</a></li>
-          <li><a href="#experiences">Culinary Tours</a></li>
-          <li><a href="#experiences">Music & Roots Trails</a></li>
+          <li><a href="#crafts">Bamboo Home Decor</a></li>
+          <li><a href="#crafts">Wooden Sculptures</a></li>
+          <li><a href="#story">Dhimsa Tribal Art</a></li>
+          <li><a href="#story">Fair Trade Guilds</a></li>
+          <li><a href="#story">Eastern Ghats Biosphere</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Contact & Connect</h4>
+        <h4>Direct Helpdesk</h4>
         <ul>
           <li><a href="tel:9494177921">Call: 9494177921</a></li>
           <li><a href="mailto:Krjh19@gmail.com">Email: Krjh19@gmail.com</a></li>
-          <li><a href="#contact">Inquiry Desk</a></li>
-          <li><a href="#contact">Custom Itineraries</a></li>
+          <li><a href="#contact">Wholesale Inquiries</a></li>
+          <li><a href="#contact">Corporate Gifts</a></li>
         </ul>
-        <div class="social-icons" style="margin-top: 1.25rem;">
-          <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fa-brands fa-x-twitter"></i></a>
-          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div>
       </div>
     </div>
 
     <div class="footer-bottom">
       <div>
-        &copy; 2026 Visit The USA Travel Portal. All rights reserved.
+        &copy; 2026 Araku Products Heritage. All rights reserved.
       </div>
       <div>
-        Inquiries: <strong>Krjh19@gmail.com</strong> &bull; Support: <strong>+91 9494177921</strong>
+        Contact: <strong>+91 9494177921</strong> &bull; Email: <strong>Krjh19@gmail.com</strong>
       </div>
     </div>
   </footer>
 
-  <!-- Interactive Scripts -->
+  <!-- Scripts -->
   <script>
-    // Destination Category Filter
+    // Product Category Filter
     const filterButtons = document.querySelectorAll('.filter-btn');
-    const destinationCards = document.querySelectorAll('.destination-card');
+    const productCards = document.querySelectorAll('.product-card');
 
     filterButtons.forEach(button => {
       button.addEventListener('click', () => {
         filterButtons.forEach(btn => btn.classList.remove('active'));
         button.classList.add('active');
 
-        const filterValue = button.getAttribute('data-filter');
+        const filter = button.getAttribute('data-filter');
 
-        destinationCards.forEach(card => {
-          if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+        productCards.forEach(card => {
+          if (filter === 'all' || card.getAttribute('data-category') === filter) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
@@ -1866,44 +1491,28 @@
       });
     });
 
-    // Form Submission & Notification Toast
-    function submitInquiry() {
-      const name = document.getElementById('full-name').value;
-      const email = document.getElementById('traveler-email').value;
-      const phone = document.getElementById('traveler-phone').value;
-      const dest = document.getElementById('destination-target').value;
+    // Select product from card
+    function orderItem(name) {
+      const select = document.getElementById('selected-product');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].text.includes(name) || select.options[i].value.includes(name)) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+    }
 
-      const toast = document.getElementById('toast');
+    // Submit Order function
+    function submitOrder() {
+      const toast = document.getElementById('order-toast');
       toast.style.display = 'flex';
 
       setTimeout(() => {
         toast.style.display = 'none';
-        document.getElementById('trip-inquiry-form').reset();
+        document.getElementById('product-order-form').reset();
       }, 4000);
     }
-
-    // Hero Find Trips button scroll
-    document.getElementById('btn-find-trips').addEventListener('click', () => {
-      document.getElementById('destinations').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Mobile Toggle
-    const mobileToggle = document.getElementById('mobile-toggle');
-    const navMenu = document.querySelector('.nav-menu');
-    mobileToggle.addEventListener('click', () => {
-      if (navMenu.style.display === 'flex') {
-        navMenu.style.display = 'none';
-      } else {
-        navMenu.style.display = 'flex';
-        navMenu.style.flexDirection = 'column';
-        navMenu.style.position = 'absolute';
-        navMenu.style.top = '100%';
-        navMenu.style.left = '0';
-        navMenu.style.width = '100%';
-        navMenu.style.background = 'rgba(11, 26, 48, 0.98)';
-        navMenu.style.padding = '1.5rem';
-      }
-    });
   </script>
 </body>
 </html>
