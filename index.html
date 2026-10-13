@@ -4,44 +4,47 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Araku Valley Heritage & Organic Products | Authentic Coffee, Spices & Handicrafts</title>
+  <title>ARAKU ORIGIN — Rare Terroir Coffee & Indigenous Valley Harvests</title>
   <meta name="description"
-    content="Experience authentic Araku Valley organic coffee, pure forest honey, tribal spices, handmade wooden crafts, and wellness herbs directly from Eastern Ghats tribal artisans.">
+    content="Discover rare micro-lot Arabica coffee, raw forest cliff honey, ancient spices, and tribal sculptures from Araku Valley, Eastern Ghats.">
 
-  <!-- Modern Fonts & Font Awesome Icons -->
+  <!-- Editorial Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cabinet+Grotesk:wght@700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
-      /* Organic Araku Palette - Refined Natural Tones */
-      --araku-forest: #08190e;
-      --araku-emerald: #15803d;
-      --araku-leaf: #22c55e;
-      --araku-coffee: #381a07;
-      --araku-roast: #854d0e;
-      --araku-gold: #b45309;
-      --araku-amber: #eab308;
-      --araku-cream: #faf9f5;
-      --araku-card: #ffffff;
-      --araku-border: #e2e8f0;
+      /* High-Fashion Luxury Terroir Palette */
+      --noir: #0a0b0d;
+      --noir-card: rgba(18, 20, 24, 0.72);
+      --noir-glass: rgba(255, 255, 255, 0.035);
+      --border-luxe: rgba(255, 255, 255, 0.1);
+      --border-accent: rgba(212, 175, 55, 0.35);
 
-      --text-dark: #0f172a;
-      --text-muted: #64748b;
-      --text-light: #f8fafc;
+      --gold: #d4af37;
+      --gold-bright: #f3cf65;
+      --gold-gradient: linear-gradient(135deg, #d4af37 0%, #fef3c7 50%, #b48a28 100%);
 
-      --radius-sm: 8px;
+      --clay: #a35029;
+      --mist-forest: #142a1e;
+      --parchment: #f4efe6;
+      --text-muted: #9ca3af;
+      --text-dim: #6b7280;
+
+      --font-display: 'Syne', sans-serif;
+      --font-serif: 'Cormorant Garamond', serif;
+      --font-sans: 'Plus Jakarta Sans', sans-serif;
+
+      --radius-sm: 6px;
       --radius-md: 14px;
-      --radius-lg: 22px;
+      --radius-lg: 24px;
       --radius-pill: 9999px;
 
-      --shadow-soft: 0 4px 20px rgba(12, 32, 20, 0.06);
-      --shadow-hover: 0 16px 36px rgba(12, 32, 20, 0.14);
-      --transition: all 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -52,933 +55,1103 @@
     }
 
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--araku-cream);
-      color: var(--text-dark);
+      font-family: var(--font-sans);
+      background-color: var(--noir);
+      color: var(--parchment);
       line-height: 1.6;
       overflow-x: hidden;
+      selection-background-color: var(--gold);
+      selection-color: var(--noir);
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--noir);
+    }
+
+    /* Ambient Glow Background Orbs */
+    .ambient-glow-1 {
+      position: fixed;
+      top: -150px;
+      right: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, rgba(10, 11, 13, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .ambient-glow-2 {
+      position: fixed;
+      bottom: -100px;
+      left: -100px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(20, 42, 30, 0.35) 0%, rgba(10, 11, 13, 0) 70%);
+      pointer-events: none;
+      z-index: 0;
     }
 
     /* ========================================================
-       TOP UTILITY STRIP
+       TOP MARQUEE TICKER TAPE
     ======================================================== */
-    .utility-bar {
-      background: var(--araku-forest);
-      color: #cbd5e1;
-      font-size: 0.84rem;
-      padding: 0.5rem 2rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    .ticker-wrap {
+      background: #060708;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.5rem 0;
+      overflow: hidden;
+      position: relative;
+      z-index: 100;
     }
 
-    .utility-bar a {
-      color: #86efac;
-      text-decoration: none;
+    .ticker-move {
+      display: flex;
+      width: fit-content;
+      animation: tickerLoop 32s linear infinite;
+      white-space: nowrap;
+      gap: 3rem;
+      font-size: 0.78rem;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
       font-weight: 600;
+      color: var(--gold-bright);
+    }
+
+    .ticker-move span {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      margin-left: 1.5rem;
-      transition: var(--transition);
+      gap: 0.6rem;
     }
 
-    .utility-bar a:hover {
-      color: #ffffff;
+    .ticker-move span i {
+      font-size: 0.55rem;
+      color: var(--gold);
+    }
+
+    @keyframes tickerLoop {
+      0% {
+        transform: translate3d(0, 0, 0);
+      }
+
+      100% {
+        transform: translate3d(-50%, 0, 0);
+      }
     }
 
     /* ========================================================
-       STICKY HEADER & NAV
+       EDITORIAL NAVIGATION
     ======================================================== */
-    header.main-header {
+    header.luxe-nav {
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(14px);
-      border-bottom: 1px solid #e5e7eb;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+      background: rgba(10, 11, 13, 0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-luxe);
     }
 
-    .navbar {
-      max-width: 1360px;
+    .nav-inner {
+      max-width: 1440px;
       margin: 0 auto;
-      padding: 0.85rem 2rem;
+      padding: 1.15rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
 
-    .brand-logo {
+    .brand-mark {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      gap: 1.1rem;
       text-decoration: none;
+      color: inherit;
     }
 
-    .brand-emblem {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: linear-gradient(135deg, var(--araku-emerald), var(--araku-roast));
-      color: #fef08a;
+    .brand-monogram {
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.3rem;
-      box-shadow: 0 4px 12px rgba(20, 83, 45, 0.25);
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-style: italic;
+      color: var(--gold-bright);
+      background: rgba(212, 175, 55, 0.05);
+      border-radius: var(--radius-sm);
+      position: relative;
     }
 
-    .brand-names {
+    .brand-monogram::after {
+      content: '';
+      position: absolute;
+      inset: 2px;
+      border: 1px dashed rgba(212, 175, 55, 0.35);
+    }
+
+    .brand-text {
       display: flex;
       flex-direction: column;
-      line-height: 1.1;
     }
 
-    .brand-names .pre-title {
-      font-size: 0.72rem;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      font-weight: 800;
-      color: var(--araku-leaf);
-    }
-
-    .brand-names .main-title {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 1.45rem;
+    .brand-text .label {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      letter-spacing: 2px;
       font-weight: 900;
-      color: var(--araku-forest);
-      letter-spacing: -0.5px;
+      color: #ffffff;
+      line-height: 1;
     }
 
-    .brand-names .main-title span {
-      color: var(--araku-roast);
+    .brand-text .sublabel {
+      font-size: 0.68rem;
+      letter-spacing: 3px;
+      color: var(--gold);
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-top: 2px;
     }
 
-    .nav-menu {
+    .menu-links {
       display: flex;
       list-style: none;
-      gap: 2rem;
+      gap: 2.75rem;
       align-items: center;
     }
 
-    .nav-link {
-      color: #334155;
+    .menu-links a {
+      color: #d1d5db;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 0.95rem;
-      padding: 0.4rem 0.2rem;
+      font-size: 0.88rem;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-weight: 500;
+      transition: var(--transition-smooth);
       position: relative;
-      transition: var(--transition);
     }
 
-    .nav-link:hover,
-    .nav-link.active {
-      color: var(--araku-emerald);
+    .menu-links a:hover,
+    .menu-links a.active {
+      color: var(--gold-bright);
     }
 
-    .nav-link::after {
+    .menu-links a::after {
       content: '';
       position: absolute;
-      bottom: -4px;
-      left: 0;
+      bottom: -6px;
+      left: 50%;
       width: 0;
-      height: 2px;
-      background: var(--araku-leaf);
-      border-radius: 2px;
-      transition: var(--transition);
+      height: 1px;
+      background: var(--gold-bright);
+      transition: var(--transition-smooth);
+      transform: translateX(-50%);
     }
 
-    .nav-link:hover::after,
-    .nav-link.active::after {
+    .menu-links a:hover::after {
       width: 100%;
     }
 
-    .nav-actions {
+    .header-contacts {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.5rem;
     }
 
-    .btn {
+    .contact-link-pill {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--gold-bright);
+      text-decoration: none;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       gap: 0.5rem;
-      padding: 0.75rem 1.4rem;
+      border: 1px solid rgba(212, 175, 55, 0.3);
+      padding: 0.45rem 1.1rem;
       border-radius: var(--radius-pill);
-      font-size: 0.9rem;
-      font-weight: 700;
-      text-decoration: none;
-      cursor: pointer;
-      border: none;
-      transition: var(--transition);
+      background: rgba(212, 175, 55, 0.05);
+      transition: var(--transition-smooth);
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--araku-emerald), #15803d);
-      color: white;
-      box-shadow: 0 4px 14px rgba(20, 83, 45, 0.3);
-    }
-
-    .btn-primary:hover {
-      background: linear-gradient(135deg, #166534, #14532d);
+    .contact-link-pill:hover {
+      background: var(--gold);
+      color: var(--noir);
+      border-color: var(--gold);
       transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(20, 83, 45, 0.4);
-    }
-
-    .btn-coffee {
-      background: linear-gradient(135deg, var(--araku-roast), var(--araku-coffee));
-      color: white;
-      box-shadow: 0 4px 14px rgba(69, 26, 3, 0.3);
-    }
-
-    .btn-coffee:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(69, 26, 3, 0.4);
-    }
-
-    .btn-outline {
-      background: transparent;
-      border: 1.5px solid var(--araku-emerald);
-      color: var(--araku-emerald);
-    }
-
-    .btn-outline:hover {
-      background: var(--araku-emerald);
-      color: white;
-      transform: translateY(-2px);
-    }
-
-    .cart-btn {
-      background: #f1f5f9;
-      color: var(--araku-forest);
-      width: 42px;
-      height: 42px;
-      border-radius: var(--radius-pill);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      position: relative;
-    }
-
-    .cart-badge {
-      position: absolute;
-      top: -3px;
-      right: -3px;
-      background: var(--araku-roast);
-      color: white;
-      font-size: 0.72rem;
-      font-weight: 800;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
     }
 
     /* ========================================================
-       HERO BANNER
+       EDITORIAL HERO SECTION
     ======================================================== */
-    .hero {
+    .hero-editorial {
       position: relative;
-      min-height: 85vh;
+      min-height: 92vh;
       display: flex;
       align-items: center;
-      background: linear-gradient(180deg, rgba(12, 32, 20, 0.75) 0%, rgba(12, 32, 20, 0.9) 100%),
-        url('images/Collage Backgrounds #17 (01).jpg') center/cover no-repeat;
-      color: white;
-      padding: 4rem 2rem;
+      padding: 6rem 2.5rem 4rem;
+      max-width: 1440px;
+      margin: 0 auto;
+      z-index: 10;
     }
 
-    .hero-container {
-      max-width: 1360px;
-      margin: 0 auto;
+    .hero-editorial-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4.5rem;
+      align-items: center;
       width: 100%;
     }
 
-    .hero-tag {
+    .hero-meta-badge {
       display: inline-flex;
       align-items: center;
-      gap: 0.5rem;
-      background: rgba(22, 163, 74, 0.25);
-      border: 1px solid rgba(134, 239, 172, 0.4);
-      color: #86efac;
-      padding: 0.4rem 1.1rem;
-      border-radius: var(--radius-pill);
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 1px;
+      gap: 0.75rem;
+      font-size: 0.75rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
-      margin-bottom: 1.25rem;
-      backdrop-filter: blur(8px);
+      font-weight: 700;
+      color: var(--gold-bright);
+      margin-bottom: 1.75rem;
     }
 
-    .hero-title {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: clamp(2.5rem, 5vw, 4.6rem);
+    .hero-meta-badge::before {
+      content: '';
+      width: 32px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .hero-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 5.8vw, 5.4rem);
       font-weight: 900;
-      line-height: 1.1;
-      max-width: 900px;
-      margin-bottom: 1.25rem;
-      letter-spacing: -1.2px;
+      line-height: 1.02;
+      letter-spacing: -1.5px;
+      margin-bottom: 1.5rem;
+      color: #ffffff;
+      text-transform: uppercase;
     }
 
-    .hero-title span {
-      background: linear-gradient(135deg, #fef08a 20%, #f59e0b 100%);
+    .hero-heading em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      background: var(--gold-gradient);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      text-transform: none;
+      letter-spacing: 0;
     }
 
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: #e2e8f0;
-      max-width: 680px;
-      line-height: 1.7;
-      margin-bottom: 2.25rem;
+    .hero-lead {
+      font-size: 1.12rem;
+      color: #9ca3af;
+      max-width: 580px;
+      line-height: 1.75;
+      margin-bottom: 2.75rem;
+      font-weight: 300;
     }
 
-    .hero-btns {
+    .hero-action-cluster {
       display: flex;
+      align-items: center;
+      gap: 1.5rem;
       flex-wrap: wrap;
-      gap: 1rem;
       margin-bottom: 3.5rem;
     }
 
-    /* Fast Category Jump */
-    .hero-highlights {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 1.5rem;
-      max-width: 1100px;
-    }
-
-    .hero-box {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.18);
-      backdrop-filter: blur(10px);
-      padding: 1.25rem;
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      transition: var(--transition);
-      text-decoration: none;
-      color: white;
-    }
-
-    .hero-box:hover {
-      background: rgba(255, 255, 255, 0.2);
-      transform: translateY(-4px);
-      border-color: #fef08a;
-    }
-
-    .hero-box-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: var(--radius-sm);
-      background: var(--araku-amber);
-      color: var(--araku-forest);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      flex-shrink: 0;
-    }
-
-    .hero-box-text h4 {
-      font-size: 1rem;
-      font-weight: 800;
-    }
-
-    .hero-box-text p {
-      font-size: 0.78rem;
-      color: #cbd5e1;
-    }
-
-    /* ========================================================
-       SECTION COMMON STYLES
-    ======================================================== */
-    section {
-      padding: 5rem 2rem;
-    }
-
-    .container {
-      max-width: 1360px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 3rem;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-    }
-
-    .section-tag {
+    .btn-luxe {
       display: inline-flex;
       align-items: center;
-      gap: 0.4rem;
-      color: var(--araku-leaf);
-      font-size: 0.85rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 0.4rem;
-    }
-
-    .section-title {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: clamp(2rem, 3.5vw, 2.75rem);
-      font-weight: 900;
-      color: var(--araku-forest);
-      line-height: 1.15;
-      letter-spacing: -0.5px;
-    }
-
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      max-width: 620px;
-      margin-top: 0.5rem;
-    }
-
-    /* Filter Buttons */
-    .filter-pills {
-      display: flex;
-      gap: 0.6rem;
-      flex-wrap: wrap;
-    }
-
-    .filter-btn {
-      padding: 0.55rem 1.25rem;
+      gap: 0.75rem;
+      background: var(--gold-gradient);
+      color: #000000;
+      padding: 0.95rem 2.2rem;
       border-radius: var(--radius-pill);
-      background: #ffffff;
-      color: #475569;
-      border: 1px solid var(--araku-border);
+      font-family: var(--font-display);
       font-size: 0.88rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 800;
+      text-decoration: none;
+      transition: var(--transition-smooth);
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+    }
+
+    .btn-luxe:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 40px rgba(212, 175, 55, 0.4);
+    }
+
+    .btn-ghost-luxe {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      background: transparent;
+      color: var(--parchment);
+      padding: 0.95rem 2rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-luxe);
+      font-size: 0.88rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
       font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
+      text-decoration: none;
+      transition: var(--transition-smooth);
     }
 
-    .filter-btn:hover,
-    .filter-btn.active {
-      background: var(--araku-emerald);
-      color: #ffffff;
-      border-color: var(--araku-emerald);
+    .btn-ghost-luxe:hover {
+      border-color: var(--gold);
+      color: var(--gold-bright);
+      background: rgba(255, 255, 255, 0.04);
+      transform: translateY(-2px);
     }
 
-    /* ========================================================
-       PRODUCTS CATALOG GRID
-    ======================================================== */
-    .products-grid {
+    /* Terroir Stats Strip */
+    .terroir-spec-strip {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 2rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
     }
 
-    .product-card {
-      background: var(--araku-card);
+    .spec-item .spec-num {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--gold-bright);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: 0.25rem;
+    }
+
+    .spec-item .spec-lbl {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-dim);
+    }
+
+    /* Visual Showcase Frame (Right Column) */
+    .hero-gallery-portal {
+      position: relative;
+    }
+
+    .portal-main-frame {
+      position: relative;
+      height: 580px;
       border-radius: var(--radius-lg);
       overflow: hidden;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid #edf2f7;
-      display: flex;
-      flex-direction: column;
-      transition: var(--transition);
-      position: relative;
+      border: 1px solid var(--border-luxe);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
     }
 
-    .product-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-      border-color: #bbf7d0;
-    }
-
-    .card-thumb {
-      position: relative;
-      height: 250px;
-      overflow: hidden;
-      background: #e2e8f0;
-    }
-
-    .card-thumb img {
+    .portal-main-frame img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: transform 0.6s ease;
+      filter: brightness(0.92) contrast(1.05);
+      transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    .product-card:hover .card-thumb img {
-      transform: scale(1.08);
+    .portal-main-frame:hover img {
+      transform: scale(1.05);
     }
 
-    .badge-pill {
+    .portal-floating-seal {
       position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background: rgba(12, 32, 20, 0.85);
-      backdrop-filter: blur(8px);
-      color: #fef08a;
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 0.35rem 0.8rem;
-      border-radius: var(--radius-pill);
-      text-transform: uppercase;
+      bottom: -20px;
+      left: -20px;
+      background: #111317;
+      border: 1px solid var(--border-accent);
+      padding: 1.25rem 1.6rem;
+      border-radius: var(--radius-md);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .seal-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--mist-forest);
+      border: 1px solid rgba(22, 163, 74, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #86efac;
+      font-size: 1.2rem;
+    }
+
+    .seal-text strong {
+      display: block;
+      font-size: 0.95rem;
+      color: #ffffff;
+      font-family: var(--font-display);
       letter-spacing: 0.5px;
     }
 
-    .origin-pill {
-      position: absolute;
-      bottom: 1rem;
-      right: 1rem;
-      background: white;
-      color: var(--araku-forest);
-      font-size: 0.72rem;
-      font-weight: 800;
-      padding: 0.3rem 0.75rem;
-      border-radius: var(--radius-pill);
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-    }
-
-    .product-content {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .product-category {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--araku-roast);
-      font-weight: 800;
-      margin-bottom: 0.35rem;
-    }
-
-    .product-title {
-      font-size: 1.25rem;
-      font-weight: 800;
-      color: var(--araku-forest);
-      margin-bottom: 0.4rem;
-      line-height: 1.3;
-    }
-
-    .product-desc {
-      color: var(--text-muted);
-      font-size: 0.88rem;
-      line-height: 1.55;
-      margin-bottom: 1.25rem;
-      flex-grow: 1;
-    }
-
-    .product-price-bar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding-top: 1rem;
-      border-top: 1px solid #f1f5f9;
-    }
-
-    .price-tag {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .price-tag .amount {
-      font-size: 1.35rem;
-      font-weight: 900;
-      color: var(--araku-forest);
-    }
-
-    .price-tag .unit {
+    .seal-text span {
       font-size: 0.75rem;
-      color: var(--text-muted);
+      color: var(--gold);
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .action-btn {
-      background: var(--araku-emerald);
-      color: white;
-      padding: 0.6rem 1.1rem;
-      border-radius: var(--radius-pill);
+    /* ========================================================
+       SECTION WRAPPERS
+    ======================================================== */
+    section {
+      padding: 6.5rem 2.5rem;
+      position: relative;
+      z-index: 10;
+    }
+
+    .section-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .section-pretitle {
+      font-size: 0.75rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--gold);
       font-weight: 700;
-      font-size: 0.85rem;
-      text-decoration: none;
-      transition: var(--transition);
+      margin-bottom: 0.75rem;
       display: inline-flex;
       align-items: center;
-      gap: 0.35rem;
-      border: none;
-      cursor: pointer;
+      gap: 0.6rem;
     }
 
-    .action-btn:hover {
-      background: var(--araku-roast);
+    .section-pretitle::before {
+      content: '';
+      width: 20px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .section-main-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      text-transform: uppercase;
+    }
+
+    .section-main-title em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      color: var(--gold-bright);
+      text-transform: none;
+      font-weight: 400;
+    }
+
+    .section-description {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin-top: 0.75rem;
+      font-weight: 300;
+    }
+
+    /* ========================================================
+       CURATED HARVESTS (PRODUCT CATALOG)
+    ======================================================== */
+    .catalog-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 3.5rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .luxe-tabs {
+      display: flex;
+      gap: 0.6rem;
+      background: rgba(255, 255, 255, 0.04);
+      padding: 0.4rem;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--border-luxe);
+    }
+
+    .luxe-tab-btn {
+      padding: 0.6rem 1.4rem;
+      border-radius: var(--radius-pill);
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+    }
+
+    .luxe-tab-btn:hover {
+      color: #ffffff;
+    }
+
+    .luxe-tab-btn.active {
+      background: var(--gold);
+      color: #000000;
+      font-weight: 700;
+    }
+
+    .editorial-product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .luxe-product-card {
+      background: var(--noir-card);
+      border: 1px solid var(--border-luxe);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      backdrop-filter: blur(12px);
+    }
+
+    .luxe-product-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--border-accent);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+    }
+
+    .luxe-card-frame {
+      position: relative;
+      height: 310px;
+      overflow: hidden;
+      background: #111317;
+    }
+
+    .luxe-card-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .luxe-product-card:hover .luxe-card-frame img {
+      transform: scale(1.08);
+    }
+
+    .badge-origin {
+      position: absolute;
+      top: 1.25rem;
+      left: 1.25rem;
+      background: rgba(10, 11, 13, 0.85);
+      border: 1px solid var(--border-luxe);
+      backdrop-filter: blur(8px);
+      color: var(--gold-bright);
+      font-size: 0.7rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      font-weight: 700;
+      padding: 0.35rem 0.85rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .badge-terroir {
+      position: absolute;
+      bottom: 1.25rem;
+      right: 1.25rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      color: #ffffff;
+      font-size: 0.72rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: var(--radius-pill);
+    }
+
+    .luxe-card-body {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .luxe-card-category {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .luxe-card-title {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+      line-height: 1.25;
+      text-transform: uppercase;
+    }
+
+    .luxe-card-notes {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+      font-weight: 300;
+    }
+
+    .luxe-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 1.25rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .luxe-price-tag {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .luxe-price-tag .amount {
+      font-family: var(--font-serif);
+      font-size: 1.65rem;
+      font-weight: 700;
+      color: var(--gold-bright);
+      line-height: 1;
+    }
+
+    .luxe-price-tag .portion {
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .btn-card-order {
+      background: rgba(212, 175, 55, 0.12);
+      border: 1px solid var(--border-accent);
+      color: var(--gold-bright);
+      padding: 0.65rem 1.3rem;
+      border-radius: var(--radius-pill);
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: var(--transition-smooth);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-card-order:hover {
+      background: var(--gold);
+      color: #000000;
       transform: translateY(-2px);
     }
 
     /* ========================================================
-       FEATURE STORY & TRIBAL HERITAGE
+       TERROIR & INDIGENOUS HERITAGE (EDITORIAL SPREAD)
     ======================================================== */
-    .story-section {
-      background: linear-gradient(135deg, #06170e 0%, var(--araku-forest) 100%);
-      color: white;
-      position: relative;
+    .heritage-editorial {
+      background: linear-gradient(180deg, rgba(20, 42, 30, 0.3) 0%, rgba(10, 11, 13, 0.9) 100%);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
 
-    .story-layout {
+    .editorial-spread-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem;
+      gap: 5rem;
       align-items: center;
     }
 
-    .story-image-mosaic {
+    .mosaic-collage {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(12, 40px);
       position: relative;
     }
 
-    .mosaic-item {
+    .mosaic-tile-1 {
+      grid-column: 1 / 9;
+      grid-row: 1 / 9;
       border-radius: var(--radius-md);
       overflow: hidden;
-      height: 240px;
+      border: 1px solid var(--border-luxe);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
     }
 
-    .mosaic-item img {
+    .mosaic-tile-2 {
+      grid-column: 6 / 13;
+      grid-row: 6 / 13;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-accent);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+      z-index: 2;
+    }
+
+    .mosaic-tile-1 img,
+    .mosaic-tile-2 img {
       width: 100%;
       height: 100%;
       object-fit: cover;
-      transition: var(--transition);
     }
 
-    .mosaic-item:hover img {
-      transform: scale(1.06);
-    }
-
-    .mosaic-item:first-child {
-      grid-column: span 2;
-      height: 280px;
-    }
-
-    .story-text-content h2 {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 2.75rem;
-      font-weight: 900;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-    }
-
-    .story-text-content p {
-      color: #cbd5e1;
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
-    }
-
-    .story-points {
+    .story-points-block {
       display: flex;
       flex-direction: column;
-      gap: 1rem;
-      margin-bottom: 2.25rem;
+      gap: 2rem;
+      margin-top: 2.5rem;
     }
 
-    .point-item {
+    .story-row {
       display: flex;
+      gap: 1.5rem;
       align-items: flex-start;
-      gap: 0.85rem;
     }
 
-    .point-icon {
-      color: #86efac;
-      font-size: 1.2rem;
-      margin-top: 0.2rem;
-    }
-
-    /* ========================================================
-       DIRECT CONTACT & ORDERING SECTION
-    ======================================================== */
-    .contact-section {
-      background: #f1f5f9;
-      position: relative;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1.2fr;
-      gap: 3.5rem;
-      align-items: center;
-    }
-
-    .contact-info-panel h2 {
-      font-family: 'Cabinet Grotesk', sans-serif;
-      font-size: 2.5rem;
-      font-weight: 900;
-      color: var(--araku-forest);
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .contact-info-panel p {
-      color: var(--text-muted);
-      font-size: 1.05rem;
-      margin-bottom: 2rem;
-      line-height: 1.7;
-    }
-
-    .contact-card-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.25rem;
-      margin-bottom: 2rem;
-    }
-
-    .direct-card {
-      background: white;
-      padding: 1.25rem 1.5rem;
-      border-radius: var(--radius-md);
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--araku-border);
-      display: flex;
-      align-items: center;
-      gap: 1.25rem;
-      text-decoration: none;
-      color: inherit;
-      transition: var(--transition);
-    }
-
-    .direct-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--araku-emerald);
-    }
-
-    .card-icon-box {
-      width: 48px;
-      height: 48px;
-      border-radius: var(--radius-pill);
-      background: linear-gradient(135deg, var(--araku-emerald), #16a34a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-size: 1.25rem;
+    .story-index {
+      font-family: var(--font-serif);
+      font-size: 1.6rem;
+      font-style: italic;
+      color: var(--gold);
+      line-height: 1;
+      width: 32px;
       flex-shrink: 0;
     }
 
-    .direct-card.email-type .card-icon-box {
-      background: linear-gradient(135deg, var(--araku-roast), var(--araku-coffee));
-    }
-
-    .card-meta span {
-      display: block;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--text-muted);
-      font-weight: 700;
-    }
-
-    .card-meta strong {
-      font-size: 1.25rem;
-      color: var(--araku-forest);
-      font-weight: 800;
-    }
-
-    /* Order Form */
-    .order-form-card {
-      background: white;
-      border-radius: var(--radius-lg);
-      padding: 2.5rem;
-      box-shadow: var(--shadow-hover);
-      border: 1px solid var(--araku-border);
-    }
-
-    .order-form-card h3 {
-      font-size: 1.5rem;
-      font-weight: 800;
-      color: var(--araku-forest);
+    .story-text h4 {
+      font-family: var(--font-display);
+      font-size: 1.15rem;
+      color: #ffffff;
       margin-bottom: 0.4rem;
-    }
-
-    .order-form-card p {
-      color: var(--text-muted);
-      font-size: 0.9rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1rem;
-      margin-bottom: 1.2rem;
-    }
-
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.8rem;
-      font-weight: 800;
-      color: #334155;
-      margin-bottom: 0.35rem;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem 1rem;
-      border: 1px solid #cbd5e1;
-      border-radius: var(--radius-sm);
-      font-family: inherit;
+    .story-text p {
+      color: var(--text-muted);
       font-size: 0.95rem;
-      background: #f8fafc;
-      transition: var(--transition);
-    }
-
-    .form-group input:focus,
-    .form-group select:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--araku-emerald);
-      background: white;
-      box-shadow: 0 0 0 3px rgba(20, 83, 45, 0.12);
-    }
-
-    /* Modal Notice */
-    .toast-modal {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      background: var(--araku-forest);
-      color: white;
-      padding: 1rem 1.75rem;
-      border-radius: var(--radius-md);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-      border-left: 5px solid #22c55e;
-      display: none;
-      align-items: center;
-      gap: 1rem;
-      z-index: 9999;
+      line-height: 1.65;
+      font-weight: 300;
     }
 
     /* ========================================================
-       FOOTER
+       CONCIERGE & DIRECT ORDERING DESK
     ======================================================== */
-    footer {
-      background: #06110a;
-      color: #94a3b8;
-      padding: 4.5rem 2rem 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    .concierge-section {
+      background: radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.05) 0%, rgba(10, 11, 13, 0) 70%);
     }
 
-    .footer-grid {
+    .concierge-grid {
       display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-      max-width: 1360px;
-      margin: 0 auto 3.5rem;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .concierge-info h2 {
+      margin-bottom: 1.25rem;
+    }
+
+    .concierge-info p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+    }
+
+    .direct-touchpoints {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 2.75rem;
+    }
+
+    .touchpoint-card {
+      background: var(--noir-card);
+      border: 1px solid var(--border-luxe);
+      padding: 1.4rem 1.75rem;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 1.4rem;
+      text-decoration: none;
+      color: inherit;
+      transition: var(--transition-smooth);
+    }
+
+    .touchpoint-card:hover {
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.05);
+      transform: translateX(6px);
+    }
+
+    .touchpoint-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-sm);
+      background: rgba(212, 175, 55, 0.1);
+      border: 1px solid var(--border-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold-bright);
+      font-size: 1.35rem;
+      flex-shrink: 0;
+    }
+
+    .touchpoint-details span {
+      display: block;
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .touchpoint-details strong {
+      font-family: var(--font-display);
+      font-size: 1.35rem;
+      color: #ffffff;
+      letter-spacing: 0.5px;
+    }
+
+    /* Bespoke Order Form */
+    .bespoke-order-panel {
+      background: #111317;
+      border: 1px solid var(--border-accent);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.7);
+      position: relative;
+    }
+
+    .bespoke-order-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 10%;
+      right: 10%;
+      height: 1px;
+      background: var(--gold-gradient);
+    }
+
+    .bespoke-order-panel h3 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      color: #ffffff;
+      margin-bottom: 0.5rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .bespoke-order-panel p {
+      color: var(--text-muted);
+      font-size: 0.92rem;
+      margin-bottom: 2rem;
+      font-weight: 300;
+    }
+
+    .form-duo {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-unit {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .form-unit label {
+      font-size: 0.75rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #cbd5e1;
+      font-weight: 700;
+    }
+
+    .form-unit input,
+    .form-unit select,
+    .form-unit textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: var(--radius-sm);
+      padding: 0.85rem 1.1rem;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: #ffffff;
+      transition: var(--transition-smooth);
+    }
+
+    .form-unit select option {
+      background: #111317;
+      color: #ffffff;
+    }
+
+    .form-unit input:focus,
+    .form-unit select:focus,
+    .form-unit textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.07);
+      box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
+    }
+
+    /* Interactive Feedback Toast */
+    .luxe-toast {
+      position: fixed;
+      bottom: 2.5rem;
+      right: 2.5rem;
+      background: #111317;
+      border: 1px solid var(--gold);
+      border-radius: var(--radius-md);
+      padding: 1.25rem 2rem;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+      display: none;
+      align-items: center;
+      gap: 1.25rem;
+      z-index: 9999;
+    }
+
+    .luxe-toast i {
+      font-size: 1.8rem;
+      color: var(--gold-bright);
+    }
+
+    /* ========================================================
+       EDITORIAL FOOTER
+    ======================================================== */
+    footer.luxe-footer {
+      background: #050608;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 5.5rem 2.5rem 2.5rem;
+    }
+
+    .footer-content {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 4rem;
+      margin-bottom: 4.5rem;
     }
 
     .footer-brand p {
       font-size: 0.92rem;
-      line-height: 1.7;
-      margin-top: 1rem;
-      margin-bottom: 1.5rem;
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-top: 1.25rem;
       max-width: 380px;
+      font-weight: 300;
     }
 
     .footer-col h4 {
-      color: white;
-      font-size: 1rem;
-      font-weight: 800;
-      margin-bottom: 1.25rem;
+      font-family: var(--font-display);
+      font-size: 0.95rem;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      letter-spacing: 0.5px;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
     }
 
     .footer-col ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 0.7rem;
+      gap: 0.85rem;
     }
 
     .footer-col ul a {
-      color: #94a3b8;
+      color: var(--text-muted);
       text-decoration: none;
       font-size: 0.9rem;
-      transition: var(--transition);
+      transition: var(--transition-smooth);
     }
 
     .footer-col ul a:hover {
-      color: #86efac;
-      padding-left: 4px;
+      color: var(--gold-bright);
+      padding-left: 6px;
     }
 
-    .footer-bottom {
-      max-width: 1360px;
+    .footer-bottom-line {
+      max-width: 1440px;
       margin: 0 auto;
       padding-top: 2rem;
-      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.85rem;
+      font-size: 0.82rem;
+      color: var(--text-dim);
       flex-wrap: wrap;
-      gap: 1rem;
+      gap: 1.25rem;
     }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .hero-highlights {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .story-layout {
+    /* Responsive Queries */
+    @media (max-width: 1100px) {
+      .hero-editorial-grid {
         grid-template-columns: 1fr;
       }
 
-      .contact-grid {
+      .portal-main-frame {
+        height: 440px;
+      }
+
+      .editorial-spread-grid {
         grid-template-columns: 1fr;
       }
 
-      .footer-grid {
+      .concierge-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
         grid-template-columns: 1fr 1fr;
       }
     }
 
     @media (max-width: 768px) {
-      .nav-menu {
+      .menu-links {
         display: none;
       }
 
-      .hero-highlights {
+      .hero-heading {
+        font-size: 2.75rem;
+      }
+
+      .form-duo {
         grid-template-columns: 1fr;
       }
 
-      .products-grid {
+      .footer-content {
         grid-template-columns: 1fr;
       }
 
-      .form-row {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
+      .editorial-product-grid {
         grid-template-columns: 1fr;
       }
     }
@@ -987,432 +1160,428 @@
 
 <body>
 
-  <!-- Top Utility Bar -->
-  <div class="utility-bar">
-    <div>
-      <span><i class="fa-solid fa-leaf" style="color: #4ade80;"></i> 100% Organic & Handpicked Tribal Products from
-        Araku Valley</span>
-    </div>
-    <div>
-      <a href="tel:9494177921"><i class="fa-solid fa-phone"></i> +91 9494177921</a>
-      <a href="mailto:Krjh19@gmail.com"><i class="fa-solid fa-envelope"></i> Krjh19@gmail.com</a>
+  <!-- Ambient Glow Canvas -->
+  <div class="ambient-glow-1"></div>
+  <div class="ambient-glow-2"></div>
+
+  <!-- Marquee Ticker -->
+  <div class="ticker-wrap">
+    <div class="ticker-move">
+      <span><i class="fa-solid fa-diamond"></i> Authentic Araku Terroir</span>
+      <span><i class="fa-solid fa-diamond"></i> 100% Shade-Grown Arabica</span>
+      <span><i class="fa-solid fa-diamond"></i> Wild Cliff Rock-Bee Honey</span>
+      <span><i class="fa-solid fa-diamond"></i> Heirloom Curcumin Spices</span>
+      <span><i class="fa-solid fa-diamond"></i> Indigenous Tribal Guild Crafts</span>
+      <span><i class="fa-solid fa-diamond"></i> Direct Helpline: +91 9494177921</span>
+      <span><i class="fa-solid fa-diamond"></i> Authentic Araku Terroir</span>
+      <span><i class="fa-solid fa-diamond"></i> 100% Shade-Grown Arabica</span>
+      <span><i class="fa-solid fa-diamond"></i> Wild Cliff Rock-Bee Honey</span>
+      <span><i class="fa-solid fa-diamond"></i> Heirloom Curcumin Spices</span>
+      <span><i class="fa-solid fa-diamond"></i> Indigenous Tribal Guild Crafts</span>
+      <span><i class="fa-solid fa-diamond"></i> Direct Helpline: +91 9494177921</span>
     </div>
   </div>
 
-  <!-- Main Navigation Header -->
-  <header class="main-header">
-    <div class="navbar">
-      <a href="#" class="brand-logo">
-        <div class="brand-emblem">
-          <i class="fa-solid fa-seedling"></i>
-        </div>
-        <div class="brand-names">
-          <span class="pre-title">TRIBAL HERITAGE OF</span>
-          <span class="main-title">ARAKU <span>PRODUCTS.</span></span>
+  <!-- Editorial Navigation -->
+  <header class="luxe-nav">
+    <div class="nav-inner">
+      <a href="#" class="brand-mark">
+        <div class="brand-monogram">A</div>
+        <div class="brand-text">
+          <span class="label">ARAKU ORIGIN</span>
+          <span class="sublabel">Eastern Ghats Terroir</span>
         </div>
       </a>
 
-      <ul class="nav-menu">
-        <li><a href="#coffee" class="nav-link active">Araku Coffee</a></li>
-        <li><a href="#products" class="nav-link">Forest Honey & Spices</a></li>
-        <li><a href="#crafts" class="nav-link">Handicrafts</a></li>
-        <li><a href="#story" class="nav-link">Valley Story</a></li>
-        <li><a href="#contact" class="nav-link">Direct Order</a></li>
+      <ul class="menu-links">
+        <li><a href="#terroir" class="active">Terroir</a></li>
+        <li><a href="#catalog">Rare Harvests</a></li>
+        <li><a href="#heritage">Indigenous Guilds</a></li>
+        <li><a href="#concierge">Direct Desk</a></li>
       </ul>
 
-      <div class="nav-actions">
-        <a href="#contact" class="btn btn-outline">Custom Order</a>
-        <a href="tel:9494177921" class="btn btn-primary">
-          <i class="fa-solid fa-phone"></i> Call 9494177921
+      <div class="header-contacts">
+        <a href="tel:9494177921" class="contact-link-pill">
+          <i class="fa-solid fa-phone"></i> +91 9494177921
+        </a>
+        <a href="mailto:Krjh19@gmail.com" class="contact-link-pill"
+          style="border-color: rgba(255,255,255,0.15); color: #cbd5e1;">
+          <i class="fa-solid fa-envelope"></i> Krjh19@gmail.com
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero Banner -->
-  <section class="hero" id="home">
-    <div class="hero-container">
-      <div class="hero-tag">
-        <i class="fa-solid fa-certificate"></i> GI Tagged & Fair-Trade Certified
-      </div>
-      <h1 class="hero-title">
-        Pure Aromas & Flavors From <span>Araku Valley</span>
-      </h1>
-      <p class="hero-subtitle">
-        Sourced straight from the lush Eastern Ghats mist-clad hills: award-winning shade-grown Arabica coffee, wild
-        rock bee honey, organic pepper, and authentic tribal handicrafts.
-      </p>
-
-      <div class="hero-btns">
-        <a href="#products" class="btn btn-primary" style="padding: 0.9rem 1.8rem; font-size: 1rem;">
-          <i class="fa-solid fa-basket-shopping"></i> Explore Araku Products
-        </a>
-        <a href="tel:9494177921" class="btn btn-coffee" style="padding: 0.9rem 1.8rem; font-size: 1rem;">
-          <i class="fa-solid fa-phone"></i> Order via Call: 9494177921
-        </a>
-      </div>
-
-      <!-- Quick Highlights -->
-      <div class="hero-highlights">
-        <a href="#coffee" class="hero-box">
-          <div class="hero-box-icon"><i class="fa-solid fa-mug-hot"></i></div>
-          <div class="hero-box-text">
-            <h4>Arabica Coffee</h4>
-            <p>High-altitude shade grown</p>
-          </div>
-        </a>
-        <a href="#products" class="hero-box">
-          <div class="hero-box-icon" style="background: #f59e0b;"><i class="fa-solid fa-jar"></i></div>
-          <div class="hero-box-text">
-            <h4>Wild Forest Honey</h4>
-            <p>Raw & unprocessed</p>
-          </div>
-        </a>
-        <a href="#products" class="hero-box">
-          <div class="hero-box-icon" style="background: #10b981;"><i class="fa-solid fa-pepper-hot"></i></div>
-          <div class="hero-box-text">
-            <h4>Hill Spices</h4>
-            <p>Black pepper & turmeric</p>
-          </div>
-        </a>
-        <a href="#crafts" class="hero-box">
-          <div class="hero-box-icon" style="background: #8b5cf6;"><i class="fa-solid fa-brush"></i></div>
-          <div class="hero-box-text">
-            <h4>Tribal Crafts</h4>
-            <p>Handmade bamboo & wood</p>
-          </div>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Araku Products Grid -->
-  <section id="products">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <span class="section-tag"><i class="fa-solid fa-bag-shopping"></i> Direct From Farmers</span>
-          <h2 class="section-title">Authentic Araku Products</h2>
-          <p class="section-desc">Hand-harvested by local tribal cooperatives, preserving traditional organic
-            agriculture without synthetic fertilizers.</p>
+  <!-- High-Concept Editorial Hero -->
+  <section class="hero-editorial" id="terroir">
+    <div class="hero-editorial-grid">
+      <div class="hero-text-cluster">
+        <div class="hero-meta-badge">
+          GI-Certified Micro-Lot Harvests &bull; Altitude 1,200M
         </div>
-        <div class="filter-pills" id="product-filters">
-          <button class="filter-btn active" data-filter="all">All Items</button>
-          <button class="filter-btn" data-filter="coffee">Specialty Coffee</button>
-          <button class="filter-btn" data-filter="honey">Honey & Spices</button>
-          <button class="filter-btn" data-filter="crafts">Tribal Art</button>
-        </div>
-      </div>
+        <h1 class="hero-heading">
+          Pure Terroir, <em>Sacred Soil,</em> Rare Flavors.
+        </h1>
+        <p class="hero-lead">
+          Cultivated beneath the silver oak canopies of the Eastern Ghats. We connect you directly with rare
+          single-estate Arabica coffee, wild forest comb nectar, and tribal heirloom crafts.
+        </p>
 
-      <div class="products-grid" id="products-catalog">
-        <!-- 1. Araku Signature Arabica -->
-        <div class="product-card" data-category="coffee">
-          <div class="card-thumb">
-            <img src="images/Collage Backgrounds #17 (02).jpg" alt="Araku Signature Roasted Coffee">
-            <span class="badge-pill">Bestseller</span>
-            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Paderu Hills</span>
-          </div>
-          <div class="product-content">
-            <span class="product-category">Specialty Coffee</span>
-            <h3 class="product-title">Araku Grand Arabica Beans</h3>
-            <p class="product-desc">Medium-dark roast featuring notes of dark chocolate, citrus zest, and roasted
-              almonds from 1100m elevation.</p>
-            <div class="product-price-bar">
-              <div class="price-tag">
-                <span class="amount">₹499</span>
-                <span class="unit">250g Vacuum Pack</span>
-              </div>
-              <button class="action-btn" onclick="orderItem('Araku Grand Arabica Beans')">
-                <i class="fa-solid fa-cart-plus"></i> Order Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. Pure Forest Honey -->
-        <div class="product-card" data-category="honey">
-          <div class="card-thumb">
-            <img src="images/Collage Backgrounds #17 (03).jpg" alt="Pure Araku Forest Honey">
-            <span class="badge-pill" style="color: #fed7aa;">100% Raw</span>
-            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Chintapalli Forest</span>
-          </div>
-          <div class="product-content">
-            <span class="product-category">Wild Honey</span>
-            <h3 class="product-title">Araku Wild Rock-Bee Honey</h3>
-            <p class="product-desc">Unheated, unfiltered nectar collected from natural wild hives in the dense canopies
-              of Eastern Ghats.</p>
-            <div class="product-price-bar">
-              <div class="price-tag">
-                <span class="amount">₹380</span>
-                <span class="unit">500g Glass Jar</span>
-              </div>
-              <button class="action-btn" onclick="orderItem('Araku Wild Rock-Bee Honey')">
-                <i class="fa-solid fa-cart-plus"></i> Order Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 3. Organic Hill Black Pepper -->
-        <div class="product-card" data-category="honey">
-          <div class="card-thumb">
-            <img src="images/Collage Backgrounds #17 (04).jpg" alt="Araku Organic Black Pepper">
-            <span class="badge-pill">High Piperine</span>
-            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Coffee Plantations</span>
-          </div>
-          <div class="product-content">
-            <span class="product-category">Tribal Spices</span>
-            <h3 class="product-title">Organic Estate Black Pepper</h3>
-            <p class="product-desc">Grown on the shade trees of coffee estates. Sun-dried with intensely sharp aroma and
-              rich pungent flavor.</p>
-            <div class="product-price-bar">
-              <div class="price-tag">
-                <span class="amount">₹240</span>
-                <span class="unit">200g Pouch</span>
-              </div>
-              <button class="action-btn" onclick="orderItem('Organic Estate Black Pepper')">
-                <i class="fa-solid fa-cart-plus"></i> Order Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4. Bamboo Handicrafts -->
-        <div class="product-card" data-category="crafts">
-          <div class="card-thumb">
-            <img src="images/Collage Backgrounds #17 (05).jpg" alt="Araku Tribal Bamboo Crafts">
-            <span class="badge-pill" style="color: #bae6fd;">Handcrafted</span>
-            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Dumbriguda Tribal Guild</span>
-          </div>
-          <div class="product-content">
-            <span class="product-category">Art & Craft</span>
-            <h3 class="product-title">Traditional Bamboo Lamp & Decor</h3>
-            <p class="product-desc">Finely hand-carved bamboo decor made by indigenous artisans keeping centuries of
-              folklore traditions alive.</p>
-            <div class="product-price-bar">
-              <div class="price-tag">
-                <span class="amount">₹650</span>
-                <span class="unit">Per Unique Piece</span>
-              </div>
-              <button class="action-btn" onclick="orderItem('Traditional Bamboo Lamp')">
-                <i class="fa-solid fa-cart-plus"></i> Order Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 5. Organic Kasturi Turmeric -->
-        <div class="product-card" data-category="honey">
-          <div class="card-thumb">
-            <img src="images/Collage Backgrounds #17 (06).jpg" alt="Araku High Curcumin Turmeric">
-            <span class="badge-pill">6%+ Curcumin</span>
-            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> G. Madugula Hills</span>
-          </div>
-          <div class="product-content">
-            <span class="product-category">Heritage Spices</span>
-            <h3 class="product-title">Wild Curcumin Yellow Turmeric</h3>
-            <p class="product-desc">Heirloom organic turmeric roots ground slowly without losing natural essential oils
-              and therapeutic potency.</p>
-            <div class="product-price-bar">
-              <div class="price-tag">
-                <span class="amount">₹180</span>
-                <span class="unit">250g Jar</span>
-              </div>
-              <button class="action-btn" onclick="orderItem('Wild Curcumin Yellow Turmeric')">
-                <i class="fa-solid fa-cart-plus"></i> Order Now
-              </button>
-            </div>
-          </div>
-        </div>
-
-        <!-- 6. Dark Roast Espresso Powder -->
-        <div class="product-card" data-category="coffee">
-          <div class="card-thumb">
-            <img src="images/Collage Backgrounds #17 (07).jpg" alt="Araku Dark Roast Coffee Powder">
-            <span class="badge-pill">Barista Pick</span>
-            <span class="origin-pill"><i class="fa-solid fa-location-dot"></i> Ananthagiri Peak</span>
-          </div>
-          <div class="product-content">
-            <span class="product-category">Specialty Coffee</span>
-            <h3 class="product-title">Araku French Roast Filter Coffee</h3>
-            <p class="product-desc">85% Micro-lot Arabica with 15% roasted chicory blend for the velvety traditional
-              South Indian morning brew.</p>
-            <div class="product-price-bar">
-              <div class="price-tag">
-                <span class="amount">₹320</span>
-                <span class="unit">250g Fresh Grind</span>
-              </div>
-              <button class="action-btn" onclick="orderItem('Araku French Roast Filter Coffee')">
-                <i class="fa-solid fa-cart-plus"></i> Order Now
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Story & Heritage Section -->
-  <section class="story-section" id="story">
-    <div class="container">
-      <div class="story-layout">
-        <div class="story-image-mosaic">
-          <div class="mosaic-item">
-            <img src="images/Collage Backgrounds #17 (08).jpg" alt="Araku Valley Mist and Mountains">
-          </div>
-          <div class="mosaic-item">
-            <img src="images/Collage Backgrounds #17 (09).jpg" alt="Coffee Cherries Picking">
-          </div>
-          <div class="mosaic-item">
-            <img src="images/Collage Backgrounds #17 (10).jpg" alt="Tribal Artisans at work">
-          </div>
-        </div>
-
-        <div class="story-text-content">
-          <span class="section-tag" style="color: #86efac;"><i class="fa-solid fa-mountain"></i> The Sacred Hills</span>
-          <h2>Grown in Harmony with Nature by Tribal Communities</h2>
-          <p>
-            Nestled in the lush Eastern Ghats of Andhra Pradesh at an altitude between 900 to 1,400 meters, Araku
-            Valley's rich red laterite soil and perpetual morning mist create the ideal ecosystem for organic crops.
-          </p>
-          <div class="story-points">
-            <div class="point-item">
-              <i class="fa-solid fa-shield-halved point-icon"></i>
-              <div>
-                <strong style="color: white;">100% Chemical-Free</strong>
-                <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0;">Regenerative farming practices that
-                  enrich soil fertility and biodiversity.</p>
-              </div>
-            </div>
-            <div class="point-item">
-              <i class="fa-solid fa-hand-holding-heart point-icon"></i>
-              <div>
-                <strong style="color: white;">Empowering 10,000+ Tribal Families</strong>
-                <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0;">Direct purchase ensures fair livelihood
-                  and ethical trade dividends to local farmers.</p>
-              </div>
-            </div>
-            <div class="point-item">
-              <i class="fa-solid fa-award point-icon"></i>
-              <div>
-                <strong style="color: white;">Global Acclaim</strong>
-                <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 0;">Araku coffee has won prestigious awards
-                  in Paris and global specialty coffee competitions.</p>
-              </div>
-            </div>
-          </div>
-
-          <a href="#contact" class="btn btn-primary" style="background: linear-gradient(135deg, #16a34a, #15803d);">
-            <i class="fa-solid fa-seedling"></i> Inquire Wholesale & Retail
+        <div class="hero-action-cluster">
+          <a href="#catalog" class="btn-luxe">
+            Explore The Reserve <i class="fa-solid fa-arrow-right-long"></i>
+          </a>
+          <a href="tel:9494177921" class="btn-ghost-luxe">
+            <i class="fa-solid fa-phone"></i> Order: 9494177921
           </a>
         </div>
+
+        <div class="terroir-spec-strip">
+          <div class="spec-item">
+            <div class="spec-num">1,200m</div>
+            <div class="spec-lbl">Elevation Terroir</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-num">100%</div>
+            <div class="spec-lbl">Regenerative Organic</div>
+          </div>
+          <div class="spec-item">
+            <div class="spec-num">10k+</div>
+            <div class="spec-lbl">Tribal Guild Families</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Gallery Portal Frame -->
+      <div class="hero-gallery-portal">
+        <div class="portal-main-frame">
+          <img src="images/araku-01.jpg" alt="Araku Valley Mist and Terroir">
+        </div>
+        <div class="portal-floating-seal">
+          <div class="seal-icon">
+            <i class="fa-solid fa-award"></i>
+          </div>
+          <div class="seal-text">
+            <strong>Grand Terroir Edition</strong>
+            <span>Awarded in Paris & International Cuppings</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact & Direct Order Desk -->
-  <section class="contact-section" id="contact">
-    <div class="container">
-      <div class="contact-grid">
-        <!-- Direct Contact Details -->
-        <div class="contact-info-panel">
-          <span class="section-tag"><i class="fa-solid fa-truck-fast"></i> Quick Delivery Across India</span>
-          <h2>Connect With Araku Products Desk</h2>
-          <p>
-            Looking for authentic Araku coffee bags, corporate gift hampers, wholesale spices, or custom delivery?
-            Contact us directly via phone, WhatsApp, or email.
+  <!-- Curated Harvests Section (Product Catalog) -->
+  <section id="catalog" style="background: rgba(14, 16, 20, 0.6);">
+    <div class="section-wrap">
+      <div class="catalog-controls">
+        <div>
+          <span class="section-pretitle">The Reserve</span>
+          <h2 class="section-main-title">Hand-Harvested <em>Provisions</em></h2>
+          <p class="section-description">Every batch is small-batch, sustainably wild-foraged or estate-harvested by
+            local tribal cooperatives.</p>
+        </div>
+
+        <div class="luxe-tabs" id="catalog-filter-tabs">
+          <button class="luxe-tab-btn active" data-filter="all">All Provisions</button>
+          <button class="luxe-tab-btn" data-filter="coffee">Specialty Arabica</button>
+          <button class="luxe-tab-btn" data-filter="honey">Honey & Spices</button>
+          <button class="luxe-tab-btn" data-filter="crafts">Tribal Artifacts</button>
+        </div>
+      </div>
+
+      <div class="editorial-product-grid" id="catalog-cards">
+        <!-- Card 1 -->
+        <article class="luxe-product-card" data-category="coffee">
+          <div class="luxe-card-frame">
+            <img src="images/araku-02.jpg" alt="Grand Arabica Reserve Coffee">
+            <span class="badge-origin">Micro-Lot 11</span>
+            <span class="badge-terroir">Paderu Ridge</span>
+          </div>
+          <div class="luxe-card-body">
+            <span class="luxe-card-category">Specialty Arabica</span>
+            <h3 class="luxe-card-title">Araku Grand Terroir Beans</h3>
+            <p class="luxe-card-notes">Medium-dark roasted to unlock notes of bittersweet cocoa, orange blossom, and
+              candied hazelnut.</p>
+            <div class="luxe-card-footer">
+              <div class="luxe-price-tag">
+                <span class="amount">₹499</span>
+                <span class="portion">250g Nitrogen Flush</span>
+              </div>
+              <button class="btn-card-order" onclick="selectReserve('Araku Grand Terroir Beans')">
+                Reserve <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="luxe-product-card" data-category="honey">
+          <div class="luxe-card-frame">
+            <img src="images/araku-03.jpg" alt="Wild Cliff Rock-Bee Honey">
+            <span class="badge-origin">Raw Nectar</span>
+            <span class="badge-terroir">Chintapalli Canopy</span>
+          </div>
+          <div class="luxe-card-body">
+            <span class="luxe-card-category">Wild Honey</span>
+            <h3 class="luxe-card-title">Cliff Rock-Bee Raw Honey</h3>
+            <p class="luxe-card-notes">Unheated, unpasteurized honey wild-foraged from sheer cliffs in deep mountain
+              ravines.</p>
+            <div class="luxe-card-footer">
+              <div class="luxe-price-tag">
+                <span class="amount">₹380</span>
+                <span class="portion">500g Glass Flagon</span>
+              </div>
+              <button class="btn-card-order" onclick="selectReserve('Cliff Rock-Bee Raw Honey')">
+                Reserve <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="luxe-product-card" data-category="honey">
+          <div class="luxe-card-frame">
+            <img src="images/araku-04.jpg" alt="Estate Black Pepper">
+            <span class="badge-origin">Tellicherry Grade</span>
+            <span class="badge-terroir">Coffee Shade Vines</span>
+          </div>
+          <div class="luxe-card-body">
+            <span class="luxe-card-category">Estate Spice</span>
+            <h3 class="luxe-card-title">Shade-Canopy Black Peppercorns</h3>
+            <p class="luxe-card-notes">Sun-dried whole peppercorns brimming with volatile essential oils and
+              extraordinary earthy heat.</p>
+            <div class="luxe-card-footer">
+              <div class="luxe-price-tag">
+                <span class="amount">₹240</span>
+                <span class="portion">200g Pouch</span>
+              </div>
+              <button class="btn-card-order" onclick="selectReserve('Shade-Canopy Black Peppercorns')">
+                Reserve <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="luxe-product-card" data-category="crafts">
+          <div class="luxe-card-frame">
+            <img src="images/araku-05.jpg" alt="Handcrafted Tribal Artifact">
+            <span class="badge-origin">Bespoke Guild</span>
+            <span class="badge-terroir">Dumbriguda Village</span>
+          </div>
+          <div class="luxe-card-body">
+            <span class="luxe-card-category">Tribal Artifact</span>
+            <h3 class="luxe-card-title">Carved Bamboo Atmosphere Lamp</h3>
+            <p class="luxe-card-notes">Interlocking geometric motifs hand-etched by indigenous elders using sustainably
+              harvested forest bamboo.</p>
+            <div class="luxe-card-footer">
+              <div class="luxe-price-tag">
+                <span class="amount">₹650</span>
+                <span class="portion">Signed Handcrafted Piece</span>
+              </div>
+              <button class="btn-card-order" onclick="selectReserve('Carved Bamboo Atmosphere Lamp')">
+                Reserve <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 5 -->
+        <article class="luxe-product-card" data-category="honey">
+          <div class="luxe-card-frame">
+            <img src="images/araku-06.jpg" alt="Wild Curcumin Yellow Turmeric">
+            <span class="badge-origin">6.2% Curcumin</span>
+            <span class="badge-terroir">G. Madugula Valley</span>
+          </div>
+          <div class="luxe-card-body">
+            <span class="luxe-card-category">Ancient Roots</span>
+            <h3 class="luxe-card-title">Heirloom Golden Turmeric</h3>
+            <p class="luxe-card-notes">Stone-ground medicinal turmeric known for deep golden hue, pungent aromatic
+              warmth, and potent curcumin.</p>
+            <div class="luxe-card-footer">
+              <div class="luxe-price-tag">
+                <span class="amount">₹180</span>
+                <span class="portion">250g Sealed Tub</span>
+              </div>
+              <button class="btn-card-order" onclick="selectReserve('Heirloom Golden Turmeric')">
+                Reserve <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 6 -->
+        <article class="luxe-product-card" data-category="coffee">
+          <div class="luxe-card-frame">
+            <img src="images/araku-07.jpg" alt="French Roast Filter Blend">
+            <span class="badge-origin">Morning Ritual</span>
+            <span class="badge-terroir">Ananthagiri Peaks</span>
+          </div>
+          <div class="luxe-card-body">
+            <span class="luxe-card-category">Specialty Arabica</span>
+            <h3 class="luxe-card-title">Dark Velvet Filter Roast</h3>
+            <p class="luxe-card-notes">A decadent 85/15 Arabica-chicory profile engineered for heavy crema and an
+              opulent breakfast cup.</p>
+            <div class="luxe-card-footer">
+              <div class="luxe-price-tag">
+                <span class="amount">₹320</span>
+                <span class="portion">250g Fresh Grind</span>
+              </div>
+              <button class="btn-card-order" onclick="selectReserve('Dark Velvet Filter Roast')">
+                Reserve <i class="fa-solid fa-arrow-right"></i>
+              </button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Indigenous Heritage Section -->
+  <section class="heritage-editorial" id="heritage">
+    <div class="section-wrap">
+      <div class="editorial-spread-grid">
+        <div class="mosaic-collage">
+          <div class="mosaic-tile-1">
+            <img src="images/araku-08.jpg" alt="Mist covered Araku valleys">
+          </div>
+          <div class="mosaic-tile-2">
+            <img src="images/araku-09.jpg" alt="Handpicking coffee cherries">
+          </div>
+        </div>
+
+        <div class="story-prose">
+          <span class="section-pretitle">Custodians of The Ghats</span>
+          <h2 class="section-main-title">Farming in Communion with <em>Nature</em></h2>
+          <p class="section-description">
+            For generations, the tribal clans of Araku have preserved biodynamic polyculture—cultivating coffee under
+            natural forest canopies of jackfruit, silver oak, and wild pepper vines.
           </p>
 
-          <div class="contact-card-list">
-            <!-- Mobile -->
-            <a href="tel:9494177921" class="direct-card" id="contact-tel-link">
-              <div class="card-icon-box">
+          <div class="story-points-block">
+            <div class="story-row">
+              <div class="story-index">01</div>
+              <div class="story-text">
+                <h4>Carbon-Negative Polyculture</h4>
+                <p>No synthetic chemicals or fertilizers touch the soil. Natural composting and bird biodiversity
+                  protect the crops.</p>
+              </div>
+            </div>
+
+            <div class="story-row">
+              <div class="story-index">02</div>
+              <div class="story-text">
+                <h4>Equitable Tribal Cooperatives</h4>
+                <p>100% of fair-trade margins flow directly to the indigenous growers and artisan guilds of
+                  Visakhapatnam district.</p>
+              </div>
+            </div>
+
+            <div class="story-row">
+              <div class="story-index">03</div>
+              <div class="story-text">
+                <h4>International Acclaim</h4>
+                <p>Celebrated globally for clean cup characteristics, delicate floral aromas, and vibrant fruity
+                  acidity.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concierge & Direct Order Desk -->
+  <section class="concierge-section" id="concierge">
+    <div class="section-wrap">
+      <div class="concierge-grid">
+        <div class="concierge-info">
+          <span class="section-pretitle">Direct Concierge</span>
+          <h2 class="section-main-title">Acquire Rare <em>Provisions</em></h2>
+          <p>
+            Whether curating bespoke corporate gift boxes, requesting wholesale coffee supply, or ordering fresh home
+            provisions, our desk attends to every dispatch personally.
+          </p>
+
+          <div class="direct-touchpoints">
+            <!-- Mobile Phone Direct -->
+            <a href="tel:9494177921" class="touchpoint-card">
+              <div class="touchpoint-icon">
                 <i class="fa-solid fa-phone"></i>
               </div>
-              <div class="card-meta">
-                <span>Phone & WhatsApp Helpline</span>
+              <div class="touchpoint-details">
+                <span>Direct Voice & WhatsApp Desk</span>
                 <strong>+91 9494177921</strong>
               </div>
             </a>
 
-            <!-- Email -->
-            <a href="mailto:Krjh19@gmail.com" class="direct-card email-type" id="contact-mail-link">
-              <div class="card-icon-box">
+            <!-- Direct Email -->
+            <a href="mailto:Krjh19@gmail.com" class="touchpoint-card">
+              <div class="touchpoint-icon"
+                style="background: rgba(14, 165, 233, 0.1); border-color: rgba(14, 165, 233, 0.3); color: #38bdf8;">
                 <i class="fa-solid fa-envelope"></i>
               </div>
-              <div class="card-meta">
-                <span>Official Orders & Queries</span>
+              <div class="touchpoint-details">
+                <span>Official Inquiries & Dispatch</span>
                 <strong>Krjh19@gmail.com</strong>
               </div>
             </a>
-
-            <!-- Location -->
-            <div class="direct-card">
-              <div class="card-icon-box" style="background: linear-gradient(135deg, #d97706, #b45309);">
-                <i class="fa-solid fa-location-dot"></i>
-              </div>
-              <div class="card-meta">
-                <span>Supply Hub</span>
-                <strong>Araku Valley & Visakhapatnam, Andhra Pradesh</strong>
-              </div>
-            </div>
           </div>
 
-          <div style="display: flex; gap: 1rem;">
-            <a href="tel:9494177921" class="btn btn-primary">
-              <i class="fa-solid fa-phone-volume"></i> Direct Call: 9494177921
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+            <a href="tel:9494177921" class="btn-luxe">
+              <i class="fa-solid fa-phone-volume"></i> Call 9494177921
             </a>
-            <a href="mailto:Krjh19@gmail.com" class="btn btn-coffee">
+            <a href="mailto:Krjh19@gmail.com" class="btn-ghost-luxe">
               <i class="fa-solid fa-paper-plane"></i> Email Krjh19@gmail.com
             </a>
           </div>
         </div>
 
-        <!-- Interactive Direct Order Form -->
-        <div class="order-form-card">
-          <h3>Place an Order / Custom Inquiry</h3>
-          <p>Fill in your requirements and we will send payment options and dispatch tracking immediately.</p>
+        <!-- Bespoke Order Form Panel -->
+        <div class="bespoke-order-panel">
+          <h3>Reserve Your Allocation</h3>
+          <p>Specify your preferred terroir selections and dispatch address. Our team connects immediately.</p>
 
-          <form id="product-order-form" onsubmit="event.preventDefault(); submitOrder();">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cust-name">Your Full Name *</label>
-                <input type="text" id="cust-name" required placeholder="e.g. Raj Kumar">
+          <form id="bespoke-form" onsubmit="event.preventDefault(); triggerOrderNotice();">
+            <div class="form-duo">
+              <div class="form-unit">
+                <label for="client-name">Your Full Name *</label>
+                <input type="text" id="client-name" required placeholder="Raj Kumar">
               </div>
-              <div class="form-group">
-                <label for="cust-phone">Mobile Number *</label>
-                <input type="tel" id="cust-phone" required placeholder="9494177921">
+              <div class="form-unit">
+                <label for="client-phone">Phone / WhatsApp *</label>
+                <input type="tel" id="client-phone" required placeholder="9494177921">
               </div>
             </div>
 
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cust-email">Email Address *</label>
-                <input type="email" id="cust-email" required placeholder="Krjh19@gmail.com">
+            <div class="form-duo">
+              <div class="form-unit">
+                <label for="client-email">Email Address *</label>
+                <input type="email" id="client-email" required placeholder="Krjh19@gmail.com">
               </div>
-              <div class="form-group">
-                <label for="selected-product">Select Product *</label>
-                <select id="selected-product">
-                  <option value="Araku Grand Arabica Beans (250g)">Araku Grand Arabica Beans (250g)</option>
-                  <option value="Araku Wild Rock-Bee Honey (500g)">Araku Wild Rock-Bee Honey (500g)</option>
-                  <option value="Organic Estate Black Pepper (200g)">Organic Estate Black Pepper (200g)</option>
-                  <option value="Traditional Bamboo Lamp & Decor">Traditional Bamboo Lamp & Decor</option>
-                  <option value="Wild Curcumin Yellow Turmeric (250g)">Wild Curcumin Yellow Turmeric (250g)</option>
-                  <option value="Araku French Roast Filter Coffee (250g)">Araku French Roast Filter Coffee (250g)
-                  </option>
-                  <option value="Custom Gift Hamper / Bulk Order">Custom Gift Hamper / Bulk Order</option>
+              <div class="form-unit">
+                <label for="item-select">Terroir Selection *</label>
+                <select id="item-select">
+                  <option value="Araku Grand Terroir Beans (250g)">Araku Grand Terroir Beans (250g)</option>
+                  <option value="Cliff Rock-Bee Raw Honey (500g)">Cliff Rock-Bee Raw Honey (500g)</option>
+                  <option value="Shade-Canopy Black Peppercorns (200g)">Shade-Canopy Black Peppercorns (200g)</option>
+                  <option value="Carved Bamboo Atmosphere Lamp">Carved Bamboo Atmosphere Lamp</option>
+                  <option value="Heirloom Golden Turmeric (250g)">Heirloom Golden Turmeric (250g)</option>
+                  <option value="Dark Velvet Filter Roast (250g)">Dark Velvet Filter Roast (250g)</option>
+                  <option value="Bespoke Guild Gift Casket">Bespoke Guild Gift Casket (Assorted)</option>
                 </select>
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="delivery-address">Delivery Address & Quantity</label>
-              <textarea id="delivery-address" rows="3"
-                placeholder="Enter delivery pincode, full address, and package count..."></textarea>
+            <div class="form-unit">
+              <label for="dispatch-address">Delivery Address & Quantity Notes</label>
+              <textarea id="dispatch-address" rows="3"
+                placeholder="Enter delivery street, city, pin code, or custom requirements..."></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary" style="width: 100%; padding: 0.95rem; font-size: 1rem;">
-              <i class="fa-solid fa-circle-check"></i> Submit Order Request
+            <button type="submit" class="btn-luxe" style="width: 100%; justify-content: center; padding: 1.1rem;">
+              Confirm Reservation & Dispatch Request
             </button>
           </form>
         </div>
@@ -1420,101 +1589,90 @@
     </div>
   </section>
 
-  <!-- Notification Toast -->
-  <div class="toast-modal" id="order-toast">
-    <i class="fa-solid fa-circle-check" style="font-size: 1.8rem; color: #4ade80;"></i>
+  <!-- Luxe Confirmation Toast -->
+  <div class="luxe-toast" id="luxe-notice">
+    <i class="fa-solid fa-circle-check"></i>
     <div>
-      <h4 style="font-size: 1.1rem; margin-bottom: 0.2rem;">Order Request Received!</h4>
-      <p style="font-size: 0.85rem; color: #cbd5e1; margin: 0;">Our team will call or WhatsApp you at +91 9494177921 for
-        dispatch verification.</p>
+      <h4 style="color: #ffffff; font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 2px;">Order
+        Received</h4>
+      <p style="font-size: 0.85rem; color: #9ca3af; margin: 0;">Our team will reach out directly on +91 9494177921.</p>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-grid">
+  <!-- Editorial Footer -->
+  <footer class="luxe-footer">
+    <div class="footer-content">
       <div class="footer-brand">
-        <div class="brand-logo" style="margin-bottom: 0.75rem;">
-          <div class="brand-emblem">
-            <i class="fa-solid fa-seedling"></i>
+        <a href="#" class="brand-mark" style="margin-bottom: 0.75rem;">
+          <div class="brand-monogram">A</div>
+          <div class="brand-text">
+            <span class="label">ARAKU ORIGIN</span>
+            <span class="sublabel">Eastern Ghats Terroir</span>
           </div>
-          <div class="brand-names">
-            <span class="pre-title" style="color: #86efac;">TRIBAL HERITAGE</span>
-            <span class="main-title" style="color: white;">ARAKU <span style="color: #f59e0b;">PRODUCTS</span></span>
-          </div>
-        </div>
+        </a>
         <p>
-          Celebrating the finest organic harvests and hand-crafted wonders nurtured by tribal communities in the
-          picturesque hills of Araku Valley.
+          Championing high-altitude biodynamic agriculture and the indigenous tribal artisans of Araku Valley, Andhra
+          Pradesh.
         </p>
-        <div style="font-size: 0.88rem; margin-bottom: 0.4rem;">
-          <strong style="color: white;">Phone:</strong> <a href="tel:9494177921"
-            style="color: #86efac; text-decoration: none;">+91 9494177921</a>
-        </div>
-        <div style="font-size: 0.88rem;">
-          <strong style="color: white;">Email:</strong> <a href="mailto:Krjh19@gmail.com"
-            style="color: #86efac; text-decoration: none;">Krjh19@gmail.com</a>
-        </div>
       </div>
 
       <div class="footer-col">
-        <h4>Organic Range</h4>
+        <h4>Provisions</h4>
         <ul>
-          <li><a href="#products">Arabica Beans</a></li>
-          <li><a href="#products">Filter Coffee Blends</a></li>
-          <li><a href="#products">Rock Bee Honey</a></li>
-          <li><a href="#products">Organic Black Pepper</a></li>
-          <li><a href="#products">Wild Turmeric</a></li>
+          <li><a href="#catalog">Micro-Lot Arabica</a></li>
+          <li><a href="#catalog">Dark Velvet Roast</a></li>
+          <li><a href="#catalog">Wild Cliff Honey</a></li>
+          <li><a href="#catalog">Estate Peppercorns</a></li>
+          <li><a href="#catalog">Heirloom Turmeric</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Art & Culture</h4>
+        <h4>Heritage</h4>
         <ul>
-          <li><a href="#crafts">Bamboo Home Decor</a></li>
-          <li><a href="#crafts">Wooden Sculptures</a></li>
-          <li><a href="#story">Dhimsa Tribal Art</a></li>
-          <li><a href="#story">Fair Trade Guilds</a></li>
-          <li><a href="#story">Eastern Ghats Biosphere</a></li>
+          <li><a href="#heritage">The Eastern Ghats</a></li>
+          <li><a href="#heritage">Shade-Canopy Forestry</a></li>
+          <li><a href="#heritage">Tribal Farmer Guilds</a></li>
+          <li><a href="#heritage">Fair-Trade Impact</a></li>
         </ul>
       </div>
 
       <div class="footer-col">
-        <h4>Direct Helpdesk</h4>
+        <h4>Direct Concierge</h4>
         <ul>
-          <li><a href="tel:9494177921">Call: 9494177921</a></li>
-          <li><a href="mailto:Krjh19@gmail.com">Email: Krjh19@gmail.com</a></li>
-          <li><a href="#contact">Wholesale Inquiries</a></li>
-          <li><a href="#contact">Corporate Gifts</a></li>
+          <li><a href="tel:9494177921">Call: +91 9494177921</a></li>
+          <li><a href="mailto:Krjh19@gmail.com">Mail: Krjh19@gmail.com</a></li>
+          <li><a href="#concierge">Corporate Gifting</a></li>
+          <li><a href="#concierge">Wholesale Dispatch</a></li>
         </ul>
       </div>
     </div>
 
-    <div class="footer-bottom">
+    <div class="footer-bottom-line">
       <div>
-        &copy; 2026 Araku Products Heritage. All rights reserved.
+        &copy; 2026 ARAKU ORIGIN. Handcrafted with reverence for tribal soil.
       </div>
       <div>
-        Contact: <strong>+91 9494177921</strong> &bull; Email: <strong>Krjh19@gmail.com</strong>
+        Helpline: <strong>+91 9494177921</strong> &bull; Email: <strong>Krjh19@gmail.com</strong>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Filter & Interactive Behavior -->
   <script>
-    // Product Category Filter
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
+    // Tab Filtering Logic
+    const tabButtons = document.querySelectorAll('.luxe-tab-btn');
+    const productCards = document.querySelectorAll('.luxe-product-card');
 
-    filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
 
-        const filter = button.getAttribute('data-filter');
+        const category = btn.getAttribute('data-filter');
 
         productCards.forEach(card => {
-          if (filter === 'all' || card.getAttribute('data-category') === filter) {
+          if (category === 'all' || card.getAttribute('data-category') === category) {
             card.style.display = 'flex';
           } else {
             card.style.display = 'none';
@@ -1523,27 +1681,27 @@
       });
     });
 
-    // Select product from card
-    function orderItem(name) {
-      const select = document.getElementById('selected-product');
+    // Auto-select item in form when 'Reserve' is clicked
+    function selectReserve(itemName) {
+      const select = document.getElementById('item-select');
       for (let i = 0; i < select.options.length; i++) {
-        if (select.options[i].text.includes(name) || select.options[i].value.includes(name)) {
+        if (select.options[i].text.includes(itemName) || select.options[i].value.includes(itemName)) {
           select.selectedIndex = i;
           break;
         }
       }
-      document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('concierge').scrollIntoView({ behavior: 'smooth' });
     }
 
-    // Submit Order function
-    function submitOrder() {
-      const toast = document.getElementById('order-toast');
+    // Form feedback toast
+    function triggerOrderNotice() {
+      const toast = document.getElementById('luxe-notice');
       toast.style.display = 'flex';
 
       setTimeout(() => {
         toast.style.display = 'none';
-        document.getElementById('product-order-form').reset();
-      }, 4000);
+        document.getElementById('bespoke-form').reset();
+      }, 4500);
     }
   </script>
 </body>
